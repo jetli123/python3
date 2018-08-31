@@ -2,102 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/test.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-GUI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-HTML解析.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-JSON.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-Json进阶.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-MySQL操作.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-PIL图像处理.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-PIL图像处理生成验证码.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-Python内建模块之datetime.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SHA1摘要算法.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SMTP发送邮件不加标题.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SMTP发送邮件添加标题.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SMTP安全发送邮件SSL和附件完整版.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SQLite数据库操作 API接口.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-SQLite数据库练习.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-StringIO.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-TCP编程-客户端请求.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-TCP编程-服务器编程.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-XML.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-base64编解码.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-bytes和二进制数据类型的转换之struct.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-fileinput模块.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-filter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-generator生成器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-getattr()、setattr()和hasattr().py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-hashlib 摘要算法简介.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-map reduce.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-module.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-pass 空函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-raise 抛出异常.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-random-fileinput运势.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-random-随机时间.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-random-骰子.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-random扑克.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-re 正则表达式.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-urllib.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-偏函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建模块collections之OrderedDict.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建模块之collections.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建模块之itertools.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数关键字参数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数可变参数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数返回多值.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数默认参数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列出当前目录文件信息os datetime.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-匿名函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-命名关键字参数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程Linux下的fork.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程Pool进程池实战案例.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程Pool进程池方式启动子进程.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程Windows下的multiprocessing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程multiprocessing Pool进程池实战案例.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程multiprocessing创建进程池Pool类.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-多进程创建进程池Pool类.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-字符串之Unicode编码转换encode,decode用法.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-实例属性和类属性.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-对象高级编程~限制实例属性__slots__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-摘要算法应用.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型检查函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-文件序列化.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-文件迭代器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-斐波拉契函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-生成器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-装饰器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-读取文件.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-返回函数和闭包.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-递归函数.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误之 assert 断言.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误之 logging记录错误.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误之 raise 抛出错误.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误，调试和测试.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误，调试和测试之抛出错误.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误，调试和测试之断言.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误，调试和测试之记录错误.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-错误，调试和测试之调用堆栈.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象@property 习题.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之__getitem__ 类的切片.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之多态Ⅱ.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之多重继承.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之定制类-__str__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之类的数据封装.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之类的继承和多态.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之类的访问限制.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象之调用不存在的属性__getattr__()方法.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象变成之创建自己的__len__类.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程metaclass（元类）以后学.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程之__call__()方法.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程之__repr__ 的用法.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程之使用枚举类.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象高级编程@property 装饰器.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-高阶函数.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/廖雪峰-python/test1.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,21 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_height_weight.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_height_weight.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/廖雪峰-python/test_height_weight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test1.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/廖雪峰-python/test1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="299">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -519,14 +414,21 @@
       <option name="project" value="LOCAL" />
       <updated>1535706355622</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="first commit direnary for PyCharm">
+      <created>1535706445270</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1535706445270</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -632,18 +534,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test_height_weight.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="444">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test1.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test_height_weight.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="299">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
