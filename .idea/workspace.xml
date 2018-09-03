@@ -3,6 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数关键字参数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 关键字参数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数可变参数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 可变参数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数默认参数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 默认参数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-匿名函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 匿名函数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-命名关键字参数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 命名关键字参数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型检查函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数 数据类型检查函数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-斐波拉契函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 斐波拉契函数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-返回函数和闭包.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 返回函数和闭包.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-递归函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 递归函数.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-高阶函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 高阶函数.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,31 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="廖雪峰-数据类型之 tuple 方法.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 tuple 方法.py">
+      <file leaf-file-name="廖雪峰-函数 数据类型检查函数.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数 数据类型检查函数.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="廖雪峰-数据类型之 str（字符串）方法.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 str（字符串）方法.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="44" column="50" lean-forward="true" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="廖雪峰-module.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="541">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,6 +72,7 @@
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 tuple 方法.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 str（字符串）方法.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-module.py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型检查函数.py" />
       </list>
     </option>
   </component>
@@ -743,14 +734,28 @@
       <option name="project" value="LOCAL" />
       <updated>1535962829583</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="second commit file for PyCharm">
+      <created>1535962836633</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1535962836633</updated>
+    </task>
+    <task id="LOCAL-00031" summary="second commit file for PyCharm">
+      <created>1535963282610</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1535963282610</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -802,7 +807,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -908,10 +913,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 tuple 方法.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建模块之 fileinput模块.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        <state relative-caret-position="138">
+          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -924,18 +937,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建模块之 fileinput模块.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 tuple 方法.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        <state relative-caret-position="828">
+          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-module.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数 数据类型检查函数.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="541">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
