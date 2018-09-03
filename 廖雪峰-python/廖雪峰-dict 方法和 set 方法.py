@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 """"""
+# dict
+# set 和 dict 类似，也是一组 key 的集合，但不存储 value。由于 key 不能
+# 重复，所以，在 set 中，没有重复的 key。
 # 1.get 方法
 # 要避免 key 不存在的错误，有两种办法：
 # 一是通过 in 判断 key 是否存在
@@ -17,3 +20,18 @@ print(d.get('d', -1))  # 'd' key 值是否在dict 中，不存在返回指定的
 d.pop('a')  # 删除 key 值 'a'
 print(d)  # {'b': 2, 'c': 3}
 # 请务必注意，dict 内部存放的顺序和 key 放入的顺序是没有关系的
+
+# - set
+# set 和 dict 类似，也是一组 key 的集合，但不存储 value。由于 key 不能
+# 重复，所以，在 set 中，没有重复的 key。
+# 1.add 方法 添加元素
+# 要创建一个 set，需要提供一个 list 作为输入集合：
+d = set()  # or d = {1, 2, 3}
+d.add(4)
+print(d) # {4}
+
+
+# 2.remove(key) 删除元素
+s = {1, 2, 3, 4}
+s.remove(4)
+print(s)
