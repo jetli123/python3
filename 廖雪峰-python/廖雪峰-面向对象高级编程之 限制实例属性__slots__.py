@@ -17,7 +17,9 @@ class Student(object):
 
 s = Student()
 s.name = 'Michael'  # 动态给实例绑定一个属性
-print s.name
+print(s.name)
+
+
 # Michael
 
 # 还可以尝试给实例绑定一个方法：
@@ -29,7 +31,7 @@ def set_age(self, age):
 from types import MethodType
 s.set_age = MethodType(set_age, s)
 s.set_age(22)
-print s.age
+print(s.age)
 # 22
 
 s2 = Student()
@@ -47,11 +49,10 @@ Student.set_score = MethodType(set_score, Student)
 # for example:
 
 s.set_score(100)
-print s.score
+print(s.score)
 # 100
 s2.set_score(99)
-print s2.score
-
+print(s2.score)
 
 """通常情况下，上面的 set_score 方法可以直接定义在 class 中，但动态绑
 定允许我们在程序运行的过程中动态给 class 加上功能，这在静态语言
