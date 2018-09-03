@@ -3,6 +3,10 @@
 # dict
 # set 和 dict 类似，也是一组 key 的集合，但不存储 value。由于 key 不能
 # 重复，所以，在 set 中，没有重复的 key。
+# 创建dict 函数： dict()
+x = dict([('a', 1), ('b', 2)])
+print(x) # {'a': 1, 'b': 2}
+
 # 1.get 方法
 # 要避免 key 不存在的错误，有两种办法：
 # 一是通过 in 判断 key 是否存在
