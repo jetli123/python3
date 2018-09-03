@@ -42,7 +42,7 @@ print('中文字节流转换为str：', b'\xe4\xb8\xad\xe6\x96\x87'.decode('utf-
 
 
 
-a = open(r'G:\PyCharm\python3_test\123', encoding='utf-8')  # 读取文件获得的字节流 bytes
+a = open(r'G:\PyCharm\python3_test\123', encoding='utf-8')  # 读取文件获得的字节流 bytes, 指定编码为 utf-8
 for i in a.readline():
     u_str = ord(i)  # 获取中文字符串整数表示
     print(u_str, ":", chr(u_str))  # 将整数表示的中文编码转换成中文字符串
