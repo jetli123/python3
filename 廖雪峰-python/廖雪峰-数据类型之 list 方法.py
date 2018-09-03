@@ -8,6 +8,10 @@
 # 当索引超出了范围时，Python 会报一个 IndexError 错误，所以，要确保
 # 索引不要越界，记得最后一个元素的索引是 len(classmates) - 1。
 
+# 创建列表函数： list()
+m = list([1, 2, 3])
+print(m)  # [1, 2, 3]
+
 # 1.append() 方法
 # list 是一个可变的有序表，所以，可以往 list 中追加元素到末尾：
 a = ['a', 'b', 'c']
