@@ -6,14 +6,14 @@ print(L)
 
 
 # -*- 使用函数表示 -*-
-def Tes(A):
+def tes(A):
     for x in range(1, 7):
         A.append(x*x)
     print(A)
 
 
 B = []
-Tes(B)
+tes(B)
 # -*- 练习使用列表生成器 -*-
 print([ x * x for x in range(1, 5) ])
 
@@ -22,7 +22,7 @@ print([m + n for m in 'ABC' for n in 'XYZ'])
 
 # -*- 列出当前目录所有文件和目录 -*-
 import os
-print([b for b in os.listdir('E:/')])
+print([b for b in os.listdir('G:/')])
 
 # -*- for 循环可同时使用多个变量 -*-
 d = {'x': '1', 'y': '4', 'z': '2'}
