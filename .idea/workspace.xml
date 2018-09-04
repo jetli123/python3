@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +21,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="111.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="111.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/廖雪峰-python/111.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="243">
+              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="廖雪峰-列表之 生成器 generator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="廖雪峰-迭代器.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-230">
+              <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -76,7 +96,10 @@
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 递归函数.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 返回函数和闭包.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器.py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/111.py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" />
       </list>
     </option>
   </component>
@@ -120,6 +143,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,7 +172,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -162,7 +185,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.111">
+  <component name="RunManager" selected="Python.廖雪峰-迭代器">
     <configuration default="false" name="111" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -176,23 +199,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="linux_shell" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/111.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="廖雪峰-函数参数之 位置参数" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/廖雪峰-python" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="linux_shell" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 位置参数.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -243,7 +249,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="linux_shell" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py" />
+      <option name="SCRIPT_NAME" value="G:\PyCharm\python3_test\linux_shell\廖雪峰-python\廖雪峰-列表之 列表生成式.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="廖雪峰-迭代器" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/廖雪峰-python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="linux_shell" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -380,6 +403,23 @@
       <option name="params" value="" />
       <option name="USE_PARAM" value="false" />
       <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="廖雪峰-列表之 生成器 generator" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/廖雪峰-python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="linux_shell" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="廖雪峰-函数参数之 命名关键字参数" type="PythonConfigurationType" factoryName="Python">
@@ -530,7 +570,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="linux_shell" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-生成器.py" />
+      <option name="SCRIPT_NAME" value="G:\PyCharm\python3_test\linux_shell\廖雪峰-python\廖雪峰-列表之 生成器 generator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -569,31 +609,32 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="16">
-      <item index="0" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 命名关键字参数" />
-      <item index="1" class="java.lang.String" itemvalue="Python.廖雪峰-dict 和 list 区别" />
-      <item index="2" class="java.lang.String" itemvalue="Python.廖雪峰-dict 方法" />
-      <item index="3" class="java.lang.String" itemvalue="Python.廖雪峰-dict 方法和 set 方法" />
-      <item index="4" class="java.lang.String" itemvalue="Python.廖雪峰-module" />
-      <item index="5" class="java.lang.String" itemvalue="Python.廖雪峰-函数之 数据类型检查函数" />
-      <item index="6" class="java.lang.String" itemvalue="Python.廖雪峰-数据类型之 list 方法" />
-      <item index="7" class="java.lang.String" itemvalue="Python.test_height_weight" />
-      <item index="8" class="java.lang.String" itemvalue="Python.廖雪峰-生成器" />
-      <item index="9" class="java.lang.String" itemvalue="Python.廖雪峰-字符串之输出格式化的字符串" />
-      <item index="10" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 可变参数" />
-      <item index="11" class="java.lang.String" itemvalue="Python.111" />
-      <item index="12" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 位置参数" />
+    <list size="17">
+      <item index="0" class="java.lang.String" itemvalue="Python.廖雪峰-列表之 生成器 generator" />
+      <item index="1" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 命名关键字参数" />
+      <item index="2" class="java.lang.String" itemvalue="Python.廖雪峰-dict 和 list 区别" />
+      <item index="3" class="java.lang.String" itemvalue="Python.廖雪峰-dict 方法" />
+      <item index="4" class="java.lang.String" itemvalue="Python.廖雪峰-dict 方法和 set 方法" />
+      <item index="5" class="java.lang.String" itemvalue="Python.廖雪峰-module" />
+      <item index="6" class="java.lang.String" itemvalue="Python.廖雪峰-函数之 数据类型检查函数" />
+      <item index="7" class="java.lang.String" itemvalue="Python.廖雪峰-数据类型之 list 方法" />
+      <item index="8" class="java.lang.String" itemvalue="Python.test_height_weight" />
+      <item index="9" class="java.lang.String" itemvalue="Python.廖雪峰-生成器" />
+      <item index="10" class="java.lang.String" itemvalue="Python.廖雪峰-字符串之输出格式化的字符串" />
+      <item index="11" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 可变参数" />
+      <item index="12" class="java.lang.String" itemvalue="Python.111" />
       <item index="13" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 默认参数" />
       <item index="14" class="java.lang.String" itemvalue="Python.廖雪峰-函数之 递归函数" />
       <item index="15" class="java.lang.String" itemvalue="Python.廖雪峰-列表生成式" />
+      <item index="16" class="java.lang.String" itemvalue="Python.廖雪峰-迭代器" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.111" />
-        <item index="1" class="java.lang.String" itemvalue="Python.廖雪峰-列表生成式" />
-        <item index="2" class="java.lang.String" itemvalue="Python.廖雪峰-函数之 递归函数" />
-        <item index="3" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 默认参数" />
-        <item index="4" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 位置参数" />
+        <item index="0" class="java.lang.String" itemvalue="Python.廖雪峰-迭代器" />
+        <item index="1" class="java.lang.String" itemvalue="Python.111" />
+        <item index="2" class="java.lang.String" itemvalue="Python.廖雪峰-列表生成式" />
+        <item index="3" class="java.lang.String" itemvalue="Python.廖雪峰-函数之 递归函数" />
+        <item index="4" class="java.lang.String" itemvalue="Python.廖雪峰-函数参数之 默认参数" />
       </list>
     </recent_temporary>
   </component>
@@ -607,34 +648,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535698988591</updated>
-    </task>
-    <task id="LOCAL-00001" summary="first commit for PyCharm">
-      <created>1535699068806</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1535699068806</updated>
-    </task>
-    <task id="LOCAL-00002" summary="first commit direnary for PyCharm">
-      <created>1535699564941</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1535699564941</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first commit direnary for PyCharm">
-      <created>1535700228633</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1535700228633</updated>
-    </task>
-    <task id="LOCAL-00004" summary="first commit direnary for PyCharm">
-      <created>1535700277488</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1535700277488</updated>
     </task>
     <task id="LOCAL-00005" summary="first commit direnary for PyCharm">
       <created>1535701232377</created>
@@ -951,25 +964,53 @@
       <option name="project" value="LOCAL" />
       <updated>1536047447593</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="second commit file for PyCharm">
+      <created>1536048255228</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1536048255228</updated>
+    </task>
+    <task id="LOCAL-00051" summary="third commit file for PyCharm">
+      <created>1536049496995</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1536049496996</updated>
+    </task>
+    <task id="LOCAL-00052" summary="third commit file for PyCharm">
+      <created>1536055027147</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1536055027147</updated>
+    </task>
+    <task id="LOCAL-00053" summary="third commit file for PyCharm">
+      <created>1536055131236</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1536055131236</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5097561" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1003,9 +1044,9 @@
     <MESSAGE value="first commit for PyCharm" />
     <MESSAGE value="first commit direnary for PyCharm" />
     <MESSAGE value="first commit file for PyCharm" />
-    <MESSAGE value="third commit file for PyCharm" />
     <MESSAGE value="second commit file for PyCharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit file for PyCharm" />
+    <MESSAGE value="third commit file for PyCharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="third commit file for PyCharm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1017,11 +1058,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/111.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数参数之 默认参数.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
           <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1029,11 +1077,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-生成器.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1104,13 +1151,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-生成器.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 list 方法.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1178,7 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1186,7 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1194,7 +1232,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1202,7 +1239,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="64" column="26" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,7 +1253,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1226,7 +1260,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1127">
           <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1234,7 +1267,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-424">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,22 +1274,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="966">
           <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表生成式.py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 列表生成式.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="138">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/111.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="243">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding />
         </state>
       </provider>

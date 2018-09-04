@@ -4,6 +4,8 @@
 # 一类是 generator，包括生成器和带 yield 的 generator function。
 
 # 这些可以直接作用于 for 循环的对象统称为可迭代对象： Iterable。
+# 可以被 next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。
+
 # 可以使用 isinstance()判断一个对象是否是 Iterable 对象：
 
 from collections import Iterable
