@@ -6,12 +6,15 @@ def die(val):
 # -*-  迭代 value -*-
 def V(vals):
     for value in vals.values():
-        print value
+        print(value)
+
+
 # -*- 同时迭代 key and value -*-
 def duble(dub):
     for k, v in dub.items():
-        print 'Key:', k
-        print 'Value:', v
+        print('Key:', k)
+        print('Value:', v)
+
 
 d = {'a': 1, 'b': 2, 'c': 3}
 die(d)
