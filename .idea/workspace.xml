@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-generator生成器.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-偏函数.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-偏函数.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-装饰器.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-函数之 装饰器 Decorator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -703,13 +700,6 @@
       <option name="presentableId" value="Default" />
       <updated>1535698988591</updated>
     </task>
-    <task id="LOCAL-00015" summary="first commit direnary for PyCharm">
-      <created>1535948822910</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1535948822910</updated>
-    </task>
     <task id="LOCAL-00016" summary="first commit direnary for PyCharm">
       <created>1535948852494</created>
       <option name="number" value="00016" />
@@ -1046,7 +1036,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536136612553</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="second commit file for PyCharm">
+      <created>1536137967795</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1536137967795</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1098,9 +1095,9 @@
     <MESSAGE value="first commit for PyCharm" />
     <MESSAGE value="first commit direnary for PyCharm" />
     <MESSAGE value="first commit file for PyCharm" />
-    <MESSAGE value="second commit file for PyCharm" />
     <MESSAGE value="third commit file for PyCharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="third commit file for PyCharm" />
+    <MESSAGE value="second commit file for PyCharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit file for PyCharm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
