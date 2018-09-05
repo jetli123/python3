@@ -24,7 +24,7 @@ class Student(object):
         self.score = score
 
     def print_score(self):  # 定义第一个方法
-        print '%s: %s' % (self.name, self.score)
+        print('%s: %s' % (self.name, self.score))
 
     def get_grade(self):  # 定义第二个方法
         if self.score >= 90:
@@ -36,9 +36,9 @@ class Student(object):
 
     def who(self):  # 定义第三个方法
         if self.name == 'Miche':
-            print 'He is my brother!'
+            print('He is my brother!')
         else:
-            print 'He is Shice! Hello.'
+            print('He is Shice! Hello.')
 
 
 miche = Student('Miche', 94)  # 根据 类 :Student(), 创建实例：miche， Student类中 定义 name和 score 属性，必须有值
@@ -49,10 +49,10 @@ Student.print_score(miche)
 shice.print_score()
 Student.print_score(shice)
 
-print miche.name
+print(miche.name)
 
-print miche.get_grade()
+print(miche.get_grade())
 miche.who()
 shice.who()
-print shice
+print(shice)
 
