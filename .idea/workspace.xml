@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="third commit file for PyCharm">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/廖雪峰-python/test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-map()、reduce()函数.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-filter.py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之 filter.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py" afterPath="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之 map()和reduce().py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,18 +26,18 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/廖雪峰-python/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+            <state relative-caret-position="69">
+              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="廖雪峰-内建函数之map()和reduce().py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py">
+      <file leaf-file-name="廖雪峰-内建函数之 filter.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之 filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            <state relative-caret-position="299">
+              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -91,9 +92,10 @@
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-列表之 生成器 generator.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/111.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-迭代器.py" />
-        <option value="$PROJECT_DIR$/廖雪峰-python/test.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-map reduce.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/test.py" />
+        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-filter.py" />
       </list>
     </option>
   </component>
@@ -411,7 +413,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="linux_shell" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py" />
+      <option name="SCRIPT_NAME" value="G:\PyCharm\python3_test\linux_shell\廖雪峰-python\廖雪峰-内建函数之 map()和reduce().py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -677,13 +679,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535698988591</updated>
-    </task>
-    <task id="LOCAL-00011" summary="first commit direnary for PyCharm">
-      <created>1535706445270</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1535706445270</updated>
     </task>
     <task id="LOCAL-00012" summary="first commit direnary for PyCharm">
       <created>1535708107238</created>
@@ -1021,7 +1016,14 @@
       <option name="project" value="LOCAL" />
       <updated>1536134488755</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="third commit file for PyCharm">
+      <created>1536134535258</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1536134535258</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1339,14 +1341,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-map()、reduce()函数.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1355,10 +1349,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之map()和reduce().py">
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之 map()和reduce().py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="-575">
           <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-内建函数之 filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
