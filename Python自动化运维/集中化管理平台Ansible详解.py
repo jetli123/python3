@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """Ansible 一种集成IT 系统的配置管理、应用部署、执行特定任务的开源平台，
 由 Paramiko 和 PyYAML 两个关键模块构建。"""
+
+# pip install Paramiko
+# pip install PyYAML
+
 # Ansible 聚友如下特点：
 # 1.部署简单，只需要在主控端部署 Ansible 环境，被控端无需做任务操作；
 # 2.默认使用SSH 协议对设备进行管理；
