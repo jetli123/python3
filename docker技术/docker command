@@ -1,0 +1,69 @@
+
+安装完docker 更改配置：
+[root@server7 ~]#vim /usr/lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd daemon --graph="/home/docker" # 容器的目录 例如：/home/docker_program/
+启动docker:
+[root@server7 ~]#systemctl daemon-reload
+[root@server7 ~]#systemctl start docker.service
+
+
+创建 容器配置目录，导入容器配置文件：
+/root/docker-compose
+[root@server1 docker-compose]# ll
+total 8
+-rw-r--r-- 1 root root 1280 Jan  8 17:40 docker-compose.yml
+
+导入镜像：
+[root@server3 software]#docker load -i "centos7_jdk8_latest.tar"  --tar 包就是镜像
+[root@server3 software]#
+
+删除镜像
+[root@NNHSSOM03S01 docker_program]# docker images
+REPOSITORY                                  TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+harbor.nokia-ices.io:7443/library/openjdk   8u171-jre-slim      aec6d0721128        27 hours ago        204.3 MB
+[root@NNHSSOM03S01 docker_program]# docker rmi aec6d0721128
+Untagged: harbor.nokia-ices.io:7443/library/openjdk:8u171-jre-slim
+Deleted: aec6d0721128ffd4617dda4f441949510bd2eee701aae0138628618982944b8e
+Deleted: ced71620a41c1e7effab868be6924cbb37f0b4bb784f92ac272cf52a84b376c9
+Deleted: 12a98079dcdc55357472a9391a490e4fec2875f7d0eca404c0bef0dc67eaaa0a
+Deleted: 85c40f069605f2f7ea49d7256dd8cdfd29774c6ae9cf0a03e65f7df299c23d66
+Deleted: 53e96ef8f3895a5ef01edce3fae1ae20ebf373efa73103ffdff4cd2a43017b24
+Deleted: 93dcaf76eda39f57fb527815740d6a33727cd00c0f5f4041b6b7371b3cb542fc
+
+检查导入的镜像：
+[root@server3 software]#docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+centos7_jdk8        latest              e81f1254b97a        6 months ago        354.2 MB
+adapter_jre8        latest              a3f913738455        7 months ago        338.4 MB
+tomcat              8.5.15-jre8         71904526bf99        7 months ago        334.3 MB
+[root@server3 software]#
+
+启动导入的镜像：第一次启动要在 docker-compose 目录下执行
+[root@server3 software]#docker-compose up -d / docker-compose up -d "镜像名字" docker-compose.yml文件中的 image: 名称
+[root@server3 software]#
+
+检查已经启用的容器：
+[root@server3 software]#docker ps
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS         PORTS         NAMES
+f9199a9dba2f        adapter_jre8         "sh /root/adapter/bin"   9 days ago          Up 4 days                    adapter_6801
+b1220e681b06        centos7_jdk8         "sh /root/poseidon/sh"   9 days ago          Up 4 days                    Poseidon
+aef4a8f8a183        tomcat:8.5.15-jre8   "catalina.sh run"        10 days ago         Up 4 days                    system_manager
+[root@server3 software]#
+
+检查镜像的的后台日志：
+[root@server3 software]#docker logs -f --tail=10  Poseidon  --"容器名字"
+[root@server3 software]#
+
+
+进入容器指令：
+[root@server3 software]#docker exec -it dhss-web /bin/bash
+[root@8983f71d7e7e dhss-web]# pwd
+/usr/local/dhss-solution/dhss-web
+[root@server3 software]#
+
+
+全部重启镜像：进入 docker-compose 目录
+[root@server3 docker-compose]#docker-compose restart
+
+系统管理平台地址：
+http://192.168.97.54:8080/systeManager/views/roleManagement.jsp
