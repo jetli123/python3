@@ -1,0 +1,139 @@
+docker 子命令分类：
+
+Docker 环境信息：info、version
+容器生命周期环境：Create、exec、kill、pause、restart、rm、run、start、stop、unpause
+镜像仓库命令：login、logout、pull、push、search
+镜像管理：build、images、import、load、rmi、save、tag、commit
+容器运维操作：attach、export、inspect、port、ps、rename、stats、top、wait、cp、diff
+系统日志信息：events、history、logs
+
+结构图：
+
+Dockerfile---build--->Images(tag)----push--->Docker registry
+			         <-----pull--Docker registry
+
+Images ---run--> Containers <--- docker stop|start|restart
+Containers ---commit-->Images
+
+Images ---load-->Backup
+
+一、docker run 命令：
+  docker run 命令用来基于特定的镜像创建一个容器，并依据选项来空值该容器。
+具体使用示例如下：
+docker run[OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run centos echo "Hellow World"
+  该命令centos 镜像启动一个容器，并执行 echo命令打印出“Hello World”。
+执行完 echo 命令后，容器将停止运行。docker run 命令启动的容器会随机分配一个 CONTAINER ID，用以标识该容器
+
+  docker run -i -t --name mytest centos:latest /bin/bash
+说明：docker run 命令启动一个容器，并为它分配一个伪终端执行 /bin/bash 命令，用户可以在该伪终端
+与容器进行交互。其中：
+ -i 选项表示使用交互模式，始终保持输入流开放；
+ -t 选项表示分配一个伪终端，一般两个参数结合时使用 -it，即可在容器中利用打开的伪终端进行交互操作；
+ -name 选项可以指定 docker run 命令启动的容器名字，若无此选项，Docker将为容器随机分配一个名字。
+
+ -c 选项：用于给运行在容器中的所有进程分配CPU的shares值，这是一个相对全中，
+实际的处理速度还与主机的CPU相关。
+ -m 选项：用于限制为容器中所有进程分配的内存总量，以B、K、M、G为单位。
+ -v 选项：用于挂载一个 volume，可以用多个-v参数同时挂载多个volume。
+volume的格式为[host-dir]:[container-dir]:[rw|ro]。
+ -p 选项：用于将容器的端口暴露给宿主机的端口，其常用格式为 hostPort:containerPort。
+通过端口的暴露，可以让外部主机通过宿主机暴露的端口来访问容器内的应用。
+
+
+
+
+二、Docker registry
+
+  Docker registry 是存储容器镜像的仓库，用户可以通过 Docker client与 Docker registry 进行通信，
+以此来完成镜像的搜索、下载和上传等相关操作。也可以自行搭建私有服务器来实现镜像仓库功能。
+
+1.docker pull 命令
+  从 Docker registry 中拉取image 或repository
+  docker pull [OPTIONS] NAME[:TAG]
+
+  在使用 docker pull 命令时，可以从官方镜像库、其他公共库、私人库中获取镜像资源。
+$ docker pull centos  # 从官方hub 拉取 centos:latest 镜像
+$ docker pull ubuntu:ubuntu12.04 # 从官方Hub拉取知名 “ubuntu 12.04” tag的镜像
+$ docker pull SEL/ubuntu  # 从特定的仓库拉取ubuntu
+$ docker pull 172.16.73.51:5000/sshd  # 从其他服务器拉取镜像
+
+2.docker push 命令
+  与docker pull 命令相对应的 docker push 命令，可以将本地的image 或 repository 推送到Docker Hub的公共或
+私有镜像库，以及私有服务器。
+$ docker push NAME[:TAG]
+$ docker push SEL/ubuntu
+
+3.镜像管理
+  用户可以在本地保存镜像资源，为此Docker提供了相应的管理子命令，这里选取images、rmi及rm子命令举例。
+docker images 命令：
+ 通过 docker images 命令可以列出主机上的镜像，默认只列出最顶层的镜像，可以使用 -a 选项显示所有镜像。
+docker rmi 和 docker rm命令：
+$ docker rmi  # 删除镜像
+$ docker rm  # 删除容器
+注意：删除镜像时，如果已有基于该镜像启动的容器存在，则无法直接删除，需要首先删除容器。
+      这两个命令加上 -f 选项，可以强制删除存在容器的镜像或启动中的容器。
+
+4.容器运维操作
+  docker attach 命令：
+docker attach命令对于开发者来说十分有用，它可以连接到正在运行的容器，观察该容器的运行情况，或与容器的主进程进行交互。
+$ docker attact [OPTIONS] CONTAINER
+
+  docker inspect命令：
+docker inspect 命令可以查看镜像和容器的详细信息，默认会列出全部信息，可以通过 --format 参数来指定输出的模版格式，
+以便输出特定信息。
+$ docker inspect [OPTIONS] CONTAINER|IMAGE [CONTAINER|IMAGE...]
+$ docker inspect --format='{{.NetworkSettings.IPAddress}}'  ee36
+172.17.0.8
+
+  docker ps命令：
+  docker ps命令可以查看容器的相关信息，默认只显示正在运行的容器的信息。可以查看到的信息包括CONTAINER ID、NAMES、IMAGES、
+STATUS、容器启动后执行的COMMAND、创建时间CREATED和绑定开启的端口PORTS。
+  docker ps命令最常用的功能是查看容器的CONTAINER ID，以便对特定容器进行操作。
+$ docker ps [OPTIONS]
+-a 查看所有容器，包括停止的容器；
+-l 查看最新创建的容器，包括不再运行中的容器。
+
+  docker commit命令：
+  commit命令可以将一个容器固化为一个新的镜像。当需要制作特定的镜像时，会进行修改容器的配置，如在容器中安装特定工具等，
+通过commit命令可以将这些修改保存起来，使其不会因为容器的停止而丢失。
+$ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+提交保存时，只能通过正在运行的容器（docker ps 查看到的容器）来制作新的镜像。
+制作特定镜像时，commit命令只是一个临时性的辅助命令，不推荐使用。官方建议通过 docker build命令结合Dockerfile创建和
+管理镜像。
+
+  events、history和logs命令：
+$ docker events [OPTIONS]  # 打印实时系统事件；
+$ docker history [OPTIONS] IMAGE  # 打印指定镜像的历史版本信息，即构建该镜像的每一层镜像的命令记录；
+$ docker logs [OPTIONS] CONTAINER  # 打印容器中进程的运行日志。
+
+三、应用栈容器节点互联
+  鉴于在同一主机下搭建容器应用栈的环境，只需要完成容器互联来实现容器间的通信即可，采用docker run 命令的--link选项建立容器间的
+互联关系。
+  --link 选项能够进行容器间安全的交互通信，使用格式为 name:alias，可在一个docker run 命令中重复使用该参数。
+$ docker run --link redis:redis --nmae console ubuntu bash  # 将ubuntu镜像上启动一个容器，并命名为 console，同时将
+新启动的console容器连接到名为 redis 的容器上。在使用 --link选项时，连接通过容器名来确定容器，这里建议启动容器时自定义容器名。
+
+  通过--link 选项来简历容器间的连接，不但可以避免容器的IP和 端口暴露到外网导致的安全问题，还可以防止容器在重启后IP地址变化导致的
+访问失效，它的原理类似于DNS服务器的域名和地址映射。当容器的IP地址发生变化时，Docker将自动维护映射关系中的IP地址。
+# 容器启动命令
+$ docker run -it --name redis-slave1 --link redis-master:master redis /bin/bash
+# 容器内查看 /etc/hosts 文件
+$ cat /etc/hosts
+
+
+
+
+
+1111111111111
+lilianjie1988
+REDhat@1988*@
+
+
+
+
+
+
+
+
+
