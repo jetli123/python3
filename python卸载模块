@@ -1,0 +1,17 @@
+1.安装模块
+
+1)利用pip安装
+
+    pip install 模块名
+
+2)利用源码安装
+
+    python setup.py install
+
+2.卸载模块
+
+1).如果是用pip安装的，可以直接使用pip uninstall 模块名
+
+2).如果是用python setup.py install安装，使用python setup.py uninstall来卸载
+
+   例如：pip uninstall pyserial
