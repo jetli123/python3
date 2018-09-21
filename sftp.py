@@ -15,7 +15,7 @@ try:
     t.connect(username=username, password=password)
     sftp = paramiko.SFTPClient.from_transport(t)
 
-    sftp.put(r"C:\Users\JetLi\Downloads\ansible-2.5.7-1.el7ae.src.rpm", "/root/ansible-2.5.7-1.el7ae.src.rpm")  # 上传文件
+    sftp.put(r"F:\CentOS-7-x86_64-DVD-1804.iso", "/root/CentOS-7-x86_64-DVD-1804.iso")  # 上传文件
     # sftp.get(r"/root/ansible-2.5.7-1.el7ae.src.rpm", r"C:\Users\JetLi\Downloads\ansible")  # 下载文件
     # sftp.mkdir("/home/userdir1", 0755)  # 创建目录
     # sftp.rmdir("/home/userdir1")  # 删除目录
