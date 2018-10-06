@@ -1,0 +1,28 @@
+Build构建镜像：
+  一般来说，用户主要使用Dockerfile和 docker build命令来完成一个新镜像的构建。这条命令格式
+如下：
+$ docker build [OPTIONS] PATH | URL | -
+# 其中PATH 和 URL 所指向的文件称为 context(上下文)。
+[OPTIONS]: 命令选项，常用的指令包括-t指定镜像的名字，-f显示指定Dockerfile，如果不使用-f，则默认将上下文路径下的名为Dockerfile的文件认为是构建镜像的"Dockerfile"。
+  流程：
+  docker client 端：
+  当Docker client接收到用户命令，首先解析命令行参数。根据第一个参数的不同，将分为3种情况分别
+处理。
+情况1：第一个参数为“-”，即：
+# 从STDIN中读入 Dockerfile，没有context。
+$ docker build - < Dockerfile
+或者
+# 从stdin中读入压缩的context。
+$ docker build - < context.tar.gz
+此时，则根据命令行输入参数对Dockerfile和context进行设置。
+
+情况2：第一个参数为 URL，且不是 git repository URL，则设置 bool型变量isRemote为true
+情况3：其他情况，即context 为文件或目录。如果第一个参数为 URL，且是git repository URL，如：
+$ docker build github.com/creack/docker-firefox，则调用 git clone --depth 1 --recursive 命令克隆该GitHub repository，
+该操作会在本地的一个临时目录中进行，命令成功之后该目录将作为 context传给Docker daemon
+$ docker build -t vieus/apache:2.0 .
+或者
+$ 使用/home/me/myapp/dockerfiles/debug 作为Dockerfile，并且使用/home/me/myapp作为context
+$ cd /home/me/myapp/some/dir/really/deep
+$ docker build -f /home/me/myapp/dockerfiles/debug /home/me/myapp
+
