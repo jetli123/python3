@@ -7,7 +7,7 @@ import sys
 
 username = "root"
 password = "centos@2018"
-hostname = "172.16.230.27"
+hostname = "172.16.230.141"
 port = 22
 
 try:
@@ -15,8 +15,8 @@ try:
     t.connect(username=username, password=password)
     sftp = paramiko.SFTPClient.from_transport(t)
 
-    # sftp.put(r"C:\Users\JetLi\Downloads\VNC-Server-6.3.1-Linux-x86.rpm", "/root/VNC-Server-6.3.1-Linux-x86.rpm")  # 上传文件
-    sftp.get(r"/root/Desktop/kvm-create", r"C:\Users\JetLi\Desktop\kvm-create")  # 下载文件
+    sftp.put(r"C:\Users\JetLi\Desktop\ansible-devel.zip", "/root/ansible-devel.zip")  # 上传文件
+    # sftp.get(r"/root/Desktop/kvm-create", r"C:\Users\JetLi\Desktop\kvm-create")  # 下载文件
     # sftp.mkdir("/home/userdir1", 0755)  # 创建目录
     # sftp.rmdir("/home/userdir1")  # 删除目录
     # sftp.rename("/home/test.sh", "/home/testfile.sh")  # 文件重命名

@@ -19,26 +19,34 @@ file_roots:
 import yaml
 obj = yaml.load(
     """
-    - He
-    - Papilionidae
-    - Apatelodidae
+    -
+        - He
+        - Papilionidae
+        - Apatelodidae
+    -
+        - China
+        - USA
+        - Japan
     """
 )
 print(obj)
 
+# 块映射描述
+# 块映射描述就是将描述的元素序列到Python 的字典（Dictionary）中，格式为“键（key）：值（value）”,以下为YAML例子：
 
+test = yaml.load(
+    """
+    - hero:
+        hp: 34
+        sp: 8
+        level: 4
+    - orc:
+        hp:
+            - 12
+            - 30
+        sp: 0
+        level: 2
+    """
+)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(test)

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f2522f3-0646-4eba-86fa-ff813d919729" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/查看进程占用CPU高的线程信息" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/查看进程占用CPU高的线程分析" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Python自动化运维/9.2 Ansible 的安装.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/kvm管理指令1.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py" afterPath="$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sftp.py" afterPath="$PROJECT_DIR$/sftp.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Python自动化运维/集中化管理平台Ansible详解.py" afterPath="$PROJECT_DIR$/Python自动化运维/9.1集中化管理平台Ansible详解.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,38 +28,48 @@
       <file leaf-file-name="sftp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sftp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="422">
+              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="查看进程占用CPU高的线程信息" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/查看进程占用CPU高的线程信息">
+      <file leaf-file-name="kvm管理指令1.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kvm管理指令1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+            <state relative-caret-position="161">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="查看进程占用CPU高的线程分析" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/查看进程占用CPU高的线程分析">
+      <file leaf-file-name="9.1集中化管理平台Ansible详解.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python自动化运维/9.1集中化管理平台Ansible详解.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="407">
+              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ansible" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ansible">
+      <file leaf-file-name="9.1 YAML 语言.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+            <state relative-caret-position="444">
+              <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="9.2 Ansible 的安装.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Python自动化运维/9.2 Ansible 的安装.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -79,11 +90,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-字符串之Unicode编码转换encode,decode用法.py" />
-        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-dict 方法.py" />
-        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-list 和 dict 区别.py" />
-        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-dict 和 list 区别.py" />
-        <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-dict 方法和 set 方法.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 list.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 list 方法.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 dict 方法和 set 方法.py" />
@@ -118,7 +124,6 @@
         <option value="$PROJECT_DIR$/廖雪峰-python/廖雪峰-面向对象编程.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/test.py" />
         <option value="$PROJECT_DIR$/Python自动化运维/9.1 集中化管理平台Ansible详解.py" />
-        <option value="$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py" />
         <option value="$PROJECT_DIR$/Python自动化运维/集中化管理平台Ansible详解.py" />
         <option value="$PROJECT_DIR$/廖雪峰-python/test_height_weight.py" />
         <option value="$PROJECT_DIR$/docker技术/docker指令解析" />
@@ -127,9 +132,15 @@
         <option value="$PROJECT_DIR$/test1.py" />
         <option value="$PROJECT_DIR$/ansible" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/sftp.py" />
         <option value="$PROJECT_DIR$/查看进程占用CPU高的线程信息" />
         <option value="$PROJECT_DIR$/查看进程占用CPU高的线程分析" />
+        <option value="$PROJECT_DIR$/python卸载模块" />
+        <option value="$PROJECT_DIR$/os 列出目录内容" />
+        <option value="$USER_HOME$/Desktop/kvm-create" />
+        <option value="$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py" />
+        <option value="$PROJECT_DIR$/sftp.py" />
+        <option value="$PROJECT_DIR$/Python自动化运维/9.2 Ansible 的安装.py" />
+        <option value="$PROJECT_DIR$/kvm管理指令1.txt" />
       </list>
     </option>
   </component>
@@ -173,8 +184,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,6 +195,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="linux_shell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="linux_shell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="linux_shell" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Python自动化运维" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -726,10 +751,10 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.sftp" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test1" />
-        <item index="3" class="java.lang.String" itemvalue="Python.test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.9.1 YAML 语言" />
+        <item index="1" class="java.lang.String" itemvalue="Python.9.1 YAML 语言" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test1" />
+        <item index="4" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -746,34 +771,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535698988591</updated>
-    </task>
-    <task id="LOCAL-00029" summary="second commit file for PyCharm">
-      <created>1535962829583</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1535962829583</updated>
-    </task>
-    <task id="LOCAL-00030" summary="second commit file for PyCharm">
-      <created>1535962836633</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1535962836633</updated>
-    </task>
-    <task id="LOCAL-00031" summary="second commit file for PyCharm">
-      <created>1535963282610</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1535963282610</updated>
-    </task>
-    <task id="LOCAL-00032" summary="second commit file for PyCharm">
-      <created>1535963421566</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1535963421566</updated>
     </task>
     <task id="LOCAL-00033" summary="second commit file for PyCharm">
       <created>1535964236300</created>
@@ -1090,7 +1087,35 @@
       <option name="project" value="LOCAL" />
       <updated>1537519640130</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="first commit file for PyCharm">
+      <created>1537520532219</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1537520532219</updated>
+    </task>
+    <task id="LOCAL-00079" summary="first commit file for PyCharm">
+      <created>1537520627072</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1537520627072</updated>
+    </task>
+    <task id="LOCAL-00080" summary="first commit file for PyCharm">
+      <created>1537520682935</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1537520682935</updated>
+    </task>
+    <task id="LOCAL-00081" summary="forth commit file for PyCharm">
+      <created>1537859460932</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1537859460933</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1103,7 +1128,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4902439" order="0" side_tool="false" content_ui="combo" />
@@ -1153,7 +1178,8 @@
     <MESSAGE value="third commit file for PyCharm" />
     <MESSAGE value="second commit file for PyCharm" />
     <MESSAGE value="first commit file for PyCharm" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit file for PyCharm" />
+    <MESSAGE value="forth commit file for PyCharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="forth commit file for PyCharm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1165,35 +1191,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/test1.py" />
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-字符串之Unicode编码转换encode,decode用法.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-字符串之输出格式化的字符串.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 dict 和 list 区别.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 list 方法.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/廖雪峰-数据类型之 dict 方法和 set 方法.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -1388,20 +1385,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/test.py" />
-    <entry file="file://$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Python自动化运维/集中化管理平台Ansible详解.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/廖雪峰-python/test_height_weight.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1450,23 +1433,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sftp.py">
+    <entry file="file://$PROJECT_DIR$/os 列出目录内容">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="14" column="41" lean-forward="false" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="536">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/查看进程占用CPU高的线程信息">
+    <entry file="file://$PROJECT_DIR$/python卸载模块">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="368">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1474,6 +1454,59 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/查看进程占用CPU高的线程信息">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/kvm-create">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="91" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sftp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python自动化运维/9.2 Ansible 的安装.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="61" lean-forward="false" selection-start-line="1" selection-start-column="61" selection-end-line="1" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python自动化运维/9.1 YAML 语言.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Python自动化运维/9.1集中化管理平台Ansible详解.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kvm管理指令1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding />
         </state>
       </provider>

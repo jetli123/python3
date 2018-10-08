@@ -1,0 +1,52 @@
+## 查看当前虚拟机的内存
+virsh qemu-monitor-command kvm-001 --hmp --cmd info balloon
+
+## 修改当前虚拟机的内存为512
+virsh qemu-monitor-command kvm-001 --hmp --cmd balloon 512
+
+##虚拟机的cpu添加到2core
+virsh setvcpus kvm-001 2 --live
+
+##配置在宿主端登录虚拟机shell。当然在宿主端也是可以通过SSH登录，但是直接登录貌似也是一个不错的方式。这个配置主要有两个步骤：
+a. 编辑 /etc/default/grub 文件，对照如下：
+[root@kvm-server ~]# vim /etc/default/grub
+
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+#GRUB_TERMINAL_OUTPUT="console"
+#GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet"
+GRUB_DISABLE_RECOVERY="true"
+
+GRUB_TERMINAL_OUTPUT="console serial"
+GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb"
+GRUB_CMDLINE_LINUX_DEFAULT="console=tty1 console=ttyS0,115200"
+
+[root@kvm-server ~]# grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.10.0-862.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-862.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-fd581a7354914b3dac02bf4526b73a26
+Found initrd image: /boot/initramfs-0-rescue-fd581a7354914b3dac02bf4526b73a26.img
+done
+
+
+[root@kvm-server ~]# virsh shutdown kvm-001
+Domain kvm-001 is being shutdown
+
+[root@kvm-server ~]# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 1     kvm-001                        running
+
+[root@kvm-server ~]# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 1     kvm-001                        running
+
+[root@kvm-server ~]# virsh list
+ Id    Name                           State
+----------------------------------------------------
+ 1     kvm-001                        in shutdown
