@@ -1,0 +1,67 @@
+1.创建一个使用sha256password身份验证插件和给定密码的账户。要求每隔180天选择一个新密码：
+CREATE USER 'jeffrey'@'localhost'
+  IDENTIFIED WITH sha256_password BY 'new_password'
+  PASSWORD EXPIRE INTERVAL 180 DAY;
+
+2.标记密码过期，以便用户必须在第一次连接到服务器时选择一个新的密码：
+CREATE USER 'jeffrey'@'localhost'
+  IDENTIFIED BY 'new_password' PASSWORD EXPIRE;
+
+3.这个语句创建两个帐户，指定一些帐户属性和一些全局属性：
+CREATE USER
+  'jeffrey'@'localhost' IDENTIFIED WITH mysql_native_password
+                                   BY 'new_password1',
+  'jeanne'@'localhost' IDENTIFIED WITH sha256_password
+                                  BY 'new_password2'
+  REQUIRE X509 WITH MAX_QUERIES_PER_HOUR 60
+  PASSWORD HISTORY 5
+  ACCOUNT LOCK;
+
+
+
+
+CREATE USER [IF NOT EXISTS]
+    user [auth_option] [, user [auth_option]] ...
+    DEFAULT ROLE role [, role ] ...
+    [REQUIRE {NONE | tls_option [[AND] tls_option] ...}]
+    [WITH resource_option [resource_option] ...]
+    [password_option | lock_option] ...
+
+user:
+    (see Section 6.2.4, “Specifying Account Names”)
+
+auth_option: {
+    IDENTIFIED BY 'auth_string'
+  | IDENTIFIED WITH auth_plugin
+  | IDENTIFIED WITH auth_plugin BY 'auth_string'
+  | IDENTIFIED WITH auth_plugin AS 'hash_string'
+}
+
+tls_option: {
+   SSL
+ | X509
+ | CIPHER 'cipher'
+ | ISSUER 'issuer'
+ | SUBJECT 'subject'
+}
+
+resource_option: {
+    MAX_QUERIES_PER_HOUR count
+  | MAX_UPDATES_PER_HOUR count
+  | MAX_CONNECTIONS_PER_HOUR count
+  | MAX_USER_CONNECTIONS count
+}
+
+password_option: {
+    PASSWORD EXPIRE [DEFAULT | NEVER | INTERVAL N DAY]
+  | PASSWORD HISTORY {DEFAULT | N}
+  | PASSWORD REUSE INTERVAL {DEFAULT | N DAY}
+  | PASSWORD REQUIRE CURRENT [DEFAULT | OPTIONAL]
+}
+
+lock_option: {
+    ACCOUNT LOCK
+  | ACCOUNT UNLOCK
+}
+
+aafkY>PJk4ru
