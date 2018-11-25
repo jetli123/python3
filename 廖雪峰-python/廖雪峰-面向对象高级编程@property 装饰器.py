@@ -25,7 +25,7 @@ class Student(object):
 # 现在，对任意的 Student 实例进行操作，就不能随心所欲地设置 score了
 s = Student()
 s.set_score(80)
-print s.get_score()
+print(s.get_score())
 # 80
 
 """这种使用 get/set 方法来封装对一个属性的访问在许多面向对象编程的语言中都很常见。
@@ -61,7 +61,7 @@ class Students(object):
 
 d = Student()
 d.scores = 60  # OK，实际转化为 s.set_score(60)
-print d.scores  # OK，实际转化为 s.get_score()
+print(d.scores)  # OK，实际转化为 s.get_score()
 # 60
 
 """注意到这个神奇的@property，我们在对实例属性操作的时候，就知道该
@@ -90,5 +90,5 @@ class Stu(object):
 
 x = Stu()
 x.birth = 1
-print x.birth
-print x.age
+print(x.birth)
+print(x.age)
