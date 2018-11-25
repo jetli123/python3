@@ -1,0 +1,65 @@
+
+一、客户端（病毒扫描源）安装步骤：
+
+# RHEL/CentOS 6:
+[root@server ~]# yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+[root@server ~]# yum install -y clamav clamd clamav-update
+[root@server ~]# chkconfig --level 235 clamd on
+[root@server ~]# /usr/bin/freshclam  # 更新病毒库
+[root@server ~]# setenforce 0  # 关闭 SELinux ，避免远程扫描时提示无权限问题
+
+# 更新守护进程监听IP配置文件，根据不同环境自行修改监听的IP，“0.0.0.0”为监听所有主机IP
+[root@server ~]# sed -i -e '/^TCPAddr/{ s/127.0.0.1/0.0.0.0/; }' /etc/clamd.conf
+
+# 在配置文件/etc/freshclam.conf和/etc/scan.conf中移除“Example”字符
+[root@server ~]# sed -i -e 's/^\(Example\)/#\1/' /etc/clamd.conf
+
+# 启动扫描守护进程
+[root@server ~]# /etc/init.d/clamd start
+
+
+
+# RHEL/CentOS 7:
+[root@server ~]# yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+[root@server ~]# yum install -y clamav
+[root@server ~]# subscription-manager repos --enable "rhel-*-optional-rpms" --enable "rhel-*-extras-rpms"
+
+二、主控端部署 pyClamad 环境 python 三方模块
+
+三、使用
+
+· 扫描所有用户的主目录就使用 clamscan -r /home
+
+· 扫描您计算机上的所有文件并且显示所有的文件的扫描结果，就使用 clamscan -r /
+
+· 扫描您计算机上的所有文件并且显示有问题的文件的扫描结果，就使用 clamscan -r --bell -i /
+
+
+[root@server share]# clamscan -r /home
+LibClamAV Warning: **************************************************
+LibClamAV Warning: ***  The virus database is older than 7 days!  ***
+LibClamAV Warning: ***   Please update it as soon as possible.    ***
+LibClamAV Warning: **************************************************
+/home/student/.bash_logout: OK
+/home/student/.viminfo: OK
+/home/student/.bash_profile: OK
+/home/student/.bashrc: OK
+/home/student/dead.letter: OK
+/home/student/.bash_history: OK
+/home/clamav/.bash_logout: OK
+/home/clamav/.bash_profile: OK
+/home/clamav/.bashrc: OK
+
+----------- SCAN SUMMARY -----------
+Known viruses: 6425142
+Engine version: 0.99.4
+Scanned directories: 11
+Scanned files: 9
+Infected files: 0
+Data scanned: 0.00 MB
+Data read: 0.00 MB (ratio 0.00:1)
+Time: 26.583 sec (0 m 26 s)
+[root@server share]#
+
+clamAV 官网：
+http://www.clamav.net/documents/installing-clamav

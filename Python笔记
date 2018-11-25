@@ -1,0 +1,467 @@
+
+变量：
+变量的概念基本上和初中代数的方程变量是一致的，只是在计算机程序
+中，变量不仅可以是数字，还可以是任意数据类型。
+变量在程序中就是用一个变量名表示了，变量名必须是大小写英文、数
+字和_的组合，且不能用数字开头，
+
+常量：
+所谓常量就是不能变的变量，比如常用的数学常数 π 就是一个常量。在
+Python 中，通常用全部大写的变量名表示常量：
+PI = 3.14159265359
+
+整数的除法为什么也是精确的。在 Python 中，有两种除
+法，一种除法是/：
+>>> 10 / 3
+3.3333333333333335
+/除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数：
+>>> 9 / 3
+3.0
+还有一种除法是//，称为地板除，两个整数的除法仍然是整数：
+>>> 10 // 3
+3
+
+Python 支持多种数据类型，在计算机内部，可以把任何数据都看成一个
+“对象”，而变量就是在程序中用来指向这些数据对象的，对变量赋值就
+是把数据和变量给关联起来。
+
+
+内建函数：
+
+pow() --幂运算，乘方: pow标准函数，称为内建函数。
+>>>2**3
+8
+>>>pow(2,3)
+8
+
+abs() --取绝对值
+>>>abs(-1)
+1
+
+round() --浮点数四舍五入最接近的整数值
+>>>round(1.0/2.0)  --0.5 最近的整数值是 1.0
+1.0
+
+
+math 模块：
+
+  使用 import 命令导入模块，按照“模块.函数”格式使用。
+
+math.floor() --返回小于它的整数，返回值的类型为浮点数
+>>>import math
+>>>math.floor(32.9)
+32.0
+
+math.ceil() --返回大于它的整数，返回值的类型为浮点数
+>>>math.ceil(32.9)
+33.0
+
+int()  --将数字和字符串转换为整数
+>>>int(32.9)
+32
+
+float()  --将数字和字符串转换为浮点数
+>>>float(32)
+32.0
+
+math.sqrt()  --返回整数的平方根
+>>>from math import sqrt
+>>>sqrt(9)
+3.0
+
+cmath 模块：
+
+  处理负数的平方根，即虚数。通过cmath 模块处理。
+>>>import cmath
+>>>cmath.sqrt(-1)
+1j
+
+str()  --将数字转换为字符串
+>>>str(234)
+'234'
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+***列表 list ***
+
+函数：
+len()  --返回序列长度
+>>>numbers = [100, 200, 300]
+>>>len(numbers)
+3
+
+max() --返回序列或参数集合的最大值
+>>>max(numbers)
+300
+
+min() --返回序列或参数集合的最小值
+>>>min(numbers)
+100
+
+list() --把序列转换为列表
+  如果需要改变序列的内容，需要转换为列表，使用 list() 函数。
+>>>list('hello')
+['h', 'e', 'l', 'l', 'o']
+  例如：
+	>>>aa = list('hello')
+	>>>aa
+	['h', 'e', 'l', 'l', 'o']
+	>>>aa[0] = 'w'
+	>>>aa
+	['w', 'e', 'l', 'l', 'o']
+	>>>del aa[4]
+	>>>aa
+	['w', 'e', 'l', 'l']
+	>>>''.join(aa)   --''.join() 函数将列表通过 ''中的字符连接起来。
+	'well'
+
+***列表方法***
+
+1.append 方法：在列表末尾追加新的对象。
+>>>lst = [1, 2, 3]
+>>>lst.append(4)
+>>>lst
+[1, 2, 3, 4]
+
+2.count 方法：统计某个元素在列表中出现的次数。
+>>>['to', 'be', 'or', 'to', 'al'].count('to')
+2
+
+3.extend 方法：在列表末尾一次追加另一个序列中的值,改变原列表。
+>>>a = [1, 2, 3]
+>>>b = [4, 5, 6]
+>>>a.extend(b)
+>>>a
+[1, 2, 3, 4, 5, 6]
+
+4.index 方法：从列表中找出某个值第一个匹配项的索引位置。
+>>>ab = ['We', 'are', 'not', 'like', 'the', 'world']
+>>>ab.index('like')
+3
+>>>ab[3]  --按索引搜索
+'like'
+
+5.insert 方法：将对象插入到列表中。
+>>>numbers = [1, 2, 3, 4, 5]
+>>>numbers.insert(3, 'four')
+[1, 2, 3, 'four', 4, 5]
+
+6.pop 方法：移除列表中的一个元素（默认最后一个），并且返回该元素的值。
+>>>x = [1, 2, 3]
+>>>x.pop()  --（）里添加索引
+3
+>>>x
+[1, 2]
+>>>x.pop(0)
+1
+>>>x
+2
+
+
+7.remove 方法：移除列表中某个值的第一个匹配项（如果有相同的多个值），不返回值
+>>>x = ['to', 'be', 'or', 'not', 'to', 'be']
+>>>x.remove('be')
+>>>x
+['to', 'or', 'not', 'to', 'be']
+
+8.reverse 方法：将列表中的元素反向存放，不返回值
+>>>x = [1, 2, 3]
+>>>x.reverse()
+>>>x
+[3, 2, 1]
+
+9.sort 方法：在原位置对列表进行排序，改变原列表
+>>>x = [4, 6, 2, 1, 7, 9]
+>>>x.sort()
+>>>x
+[1, 2, 4, 6, 7, 9]
+
+10,sorted 方法：获取已排序的列表副本，不改变原列表
+>>>x = [4, 6, 2, 1, 7, 9]
+>>>y = sorted(x)
+>>>y
+[1, 2, 4, 6, 7, 9]
+>>>x
+[4, 6, 2, 1, 7, 9]   ---原列表不变。
+
+***元组 tuple***
+
+  元组与列表一样，也是一种序列。唯一不同的是元组不能修改。
+
+创建元组：
+>>>1, 2, 3
+(1, 2, 3)
+>>>(1, 2, 3)
+(1, 2, 3)
+
+创建包含一个值的元组：在值后面加“逗号”
+>>>42,
+(42,)
+>>>(42,)
+(42,)
+
+函数：
+tuple() --与list 函数基本一样：以一个序列作为参数，并把它转换为元组。参数就是元组就原样返回
+>>>tuple([1, 2, 3])
+(1, 2, 3)
+>>>tuple('abc')
+('a', 'b', 'c')
+>>>tuple((1, 2, 3))
+(1, 2, 3)
+
+访问元组元素：
+>>>x = 1, 2, 3
+>>>x[1]
+2
+>>>x[0:2]  --元组的分片还是元组，就像列表的分片还是列表一样
+(1, 2)
+
+
+***字符串方法***
+
+find 方法：在字符串中查找子串，返回子串开头所在的位置的最左端索引，没有返回 -1
+>>>names = "Month Python's Flying Circus"
+            0123456
+>>>names.find("Month")
+0
+>>>names.find("Python")
+6
+
+find 方法2：使用起始点和结束点，查找子串
+>>>aa = '$$$ Get !!! $$$'
+>>>aa.find('$$$',1)  --添加了起始点，从索引为1 的位置找出 $$$ 字符串
+12
+>>>aa.find('!!!', 4, 13)  --添加 起始点和结束点
+8
+
+join 方法：split 的逆方法，连接序列中的元素，序列必须是字符串
+>>>seq = ['1', '2', '3', '4']
+>>>ab = '+'
+>>>ab.join(seq)
+'1+2+3+4'
+>>>seq = '', 'usr', 'bin', 'env'
+>>>'/'.join(seq)
+'/usr/bin/env'
+
+split 方法：join 的逆方法，将字符串分割成序列
+>>>'1+2+3+4'.split('+')
+['1', '2', '3', '4']
+>>>'/usr/bin/env'.split('/')
+['', 'usr', 'bin', 'env']
+>>>'Using the default'.split()
+['Using', 'the', 'default']
+
+
+replace 方法：返回某字符串的所有匹配项
+>>>'This is a test'.replace('is', 'eez')
+'Theez eez a test'
+
+*********************************************************************
+小结：                                                              *
+list 和 tuple 是 Python 内置的有序集合，一个可变，一个不可变。根据  *
+需要来选择使用它们。						    *
+								    *
+*********************************************************************
+
+
+***字典 dict***
+
+创建字典：｛｝表示
+>>>phonebook = {'Alice', '2222', 'Beth', '2342', 'Cecil', '2323'}
+>>>aa = {}  --创建空字典
+
+函数：
+
+1.dict()
+  通过其它映射（其它字典）或（键，值）对的序列建立字典
+>>>items = [('name', 'Gumby'), ('age', '22')]
+>>>d = dict(items)
+>>>d
+{'age': 22, 'name': 'Gumby'}
+>>>d['name']  --访问字典的值
+'Gumby'
+
+2.get()
+   --如果 key 不存在，可以返回 None，或者自己指定的 value：
+>>> d.get('Thomas')
+>>> d.get('Thomas', -1)
+-1
+
+3.pop(key)
+   要删除一个 key，用 pop(key)方法，对应的 value 也会从 dict 中删除：
+>>>d
+{'Michael': 95, 'Tracy': 85, 'Bob': 75}
+>>>d.pop('Bob')
+75
+>>> d
+{'Michael': 95, 'Tracy': 85}
+
+
+***set***
+  set 和 dict 类似，也是一组 key 的集合，但不存储 value。由于 key 不能重复，所以，在 set 中，没有重复的 key。要创建一个 set，需要提供一个 list 作为输入集合：
+>>> s = set([1, 2, 3])
+>>> s
+{1, 2, 3}
+
+
+*** 小 结：***
+
+a.定义函数时，需要确定函数名和参数个数；
+b.如果有必要，可以先对参数的数据类型做检查；isintance(x, tuple)/isintance(x, (int, float)) 函数
+c.函数体内部可以用 return 随时返回函数结果；
+d.函数执行完毕也没有 return 语句时，自动 return None。
+e.函数可以同时返回多个值，但其实就是一个 tuple。
+
+***函数 默认参数***
+
+定义默认参数要牢记一点：默认参数必须指向不变对象！
+
+先定义一个函数，传入一个 list，添加一个 END 再返回：
+def add_end(L=[]):
+L.append('END')
+return L
+
+>>> add_end()
+['END']
+>>> add_end()
+['END', 'END']
+>>> add_end()
+['END', 'END', 'END']
+
+原因解释如下：
+Python 函数在定义的时候，默认参数 L 的值就被计算出来了，即[]，因
+为默认参数 L 也是一个变量，它指向对象[]，每次调用该函数，如果改
+变了 L 的内容，则下次调用时，默认参数的内容就变了，不再是函数定
+义时的[]了。
+
+
+***迭代***
+
+如何判断一个对象是可迭代对象呢？方法是通过 collections 模块
+的 Iterable 类型判断：
+
+>>> from collections import Iterable
+>>> isinstance('abc', Iterable) # str 是否可迭代
+True
+>>> isinstance([1,2,3], Iterable) # list 是否可迭代
+True
+>>> isinstance(123, Iterable) # 整数是否可迭代
+False
+
+++++
+Python 内置的 enumerate 函数可以把一个 list 变成索引-元素对，这样就
+可以在 for 循环中同时迭代索引和元素本身：
+
+>>> for i, value in enumerate(['A', 'B', 'C']):
+... print(i, value)
+...
+0 A
+1 B
+2 C
+
+***抽象***
+
+如果局部变量或者参数名字和想要访问的全局变量名相同的话，就不能直接访问全局变量，全局变量会被局部变量覆盖。
+
+可以使用globals 函数返回全局变量值
+可以使用locals 函数返回局部变量字典
+
+>>>def aa(params): print params + globals()['params']    --获取全局变量值
+
+>>>params = 'World'  ---全局变量
+>>>aa('Hello')
+HelloWorld
+
+>>>def combine(parameter): print parameter + locals()['parameter']   --获取局部变量值
+
+>>>parameter = 'Noo'
+>>>combine('Good')
+GoodGood
+
+
+
+
+
+
+
+
+
+***抽象 多态***
+  多态意味着就算不知道变量所引用的对象类型是什么，还能对它进行操作，而它也会根据对象（或类）类型的不同而表现出不同的行为
+
+多态 方法：
+>>>'abc'.count('a')
+1
+>>>'aabc'.count('a')
+2
+
+多态形式：
+
+>>>1+2
+3
+>>>'Fish'+'license'
+'Fishlicense'
+
+多态函数：
+repr() ：返回表示对象的字符串。
+  repr 函数是多态特性的代表之一。
+
+def length_message(x):
+    print "The length of", repr(x), "is", len(x)
+
+>>>length_message('Fnord')
+The length of 'Fnord' is 5
+>>>length_message([1, 2, 3])
+The length of [1, 2, 3] is 3
+
+***面向对象编程***
+
+面向过程的程序设计把计算机程序视为一系列的命令集合，即一组函数
+的顺序执行。为了简化程序设计，面向过程把函数继续切分为子函数，
+即把大块函数通过切割成小块函数来降低系统的复杂度。
+\
+\
+
+*** 操作文件和目录***
+>>>import os
+
+>>>os.environ  # 查看系统定义的环境变量
+>>>os.environ.get('PATH')  # 获取变量值
+
+>>> os.path.abspath('.')  # 查看当前目录的绝对路径:
+'/Users/michael'
+>>>os.path.join('/root/', 'Nokia') # 在某个目录下创建一个新目录，首先把新目录的完整路径表示出来
+'/root/Nokia'
+>>>os.mkdir('/root/Nokia') # 创建目录
+>>>os.rmdir('/root/Nokia') # 删除目录
+>>> os.remove('test.py')  # 删掉文件:
+>>> os.rename('test.txt', 'test.py')  # 对文件重命名:
+
+>>>os.path.split('/root/abc.txt')  # 把一个路径拆分为两部分，后一部分总是最后级别的目录或文件名
+('/root', 'abc.txt')
+>>>os.path.splitext('/root/abc.txt')  # 把一个路径拆分为两部分,后一部分得到文件扩展名
+('/root/abc', '.txt')
+
+复制文件：使用 shutil 模块的 copyfile() 函数
+>>>import shutil
+
+>>>shutil.copyfile('1b.txt', '2b.txt') # 将1b.txt 复制为 2b.txt
+
+** 过滤文件 **
+
+>>>[x for x in os.listdir('/root/') if os.path.isdir(x)] # 在/root/下，如果是目录就列出
+[]
+>>>[x for x in os.listdir('.') if os.path.isfile(x)]  # 在当前目录下，如果是文件就列出
+[]
+>>>[x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1] == '.py'] # 列出目录里是.py结尾的文件
+
+
+
+*** 文件序列化***
+
+把变量从内存中变成可存储或传输的过程称之为序列化
+
+在 Python中叫 pickling
+序列化之后，就可以把序列化后的内容写入磁盘，或者通过网络传输到
+别的机器上。
+
+pickle.dumps()方法把任意对象序列化成一个 bytes，之后用文件对象的 write()方法写入到文件中
