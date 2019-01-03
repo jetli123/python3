@@ -7,12 +7,12 @@ import time
 from datetime import timedelta
 
 """获取当前日期和时间"""
-print '当前日期和时间:', datetime.now()
+print('当前日期和时间:', datetime.now())
 # 2018-03-20 13:44:54.672000
 
 """获取指定日期和时间"""
 # 通过参数构造一个 datetime:
-print '获取指定日期和时间:', datetime(2018, 03, 20, 14, 20, 40)
+print('获取指定日期和时间:', datetime(2018, 3, 20, 14, 20, 40))
 # 2018-03-20 14:20:40
 
 """datetime 转换为 timestamp"""
@@ -21,37 +21,37 @@ print '获取指定日期和时间:', datetime(2018, 03, 20, 14, 20, 40)
 # timestamp = 0 = 1970-1-1 00:00:00 UTC+0:00
 # 对应的北京时间是：
 # timestamp = 0 = 1970-1-1 08:00:00 UTC+8:00
-dt = datetime(2018, 03, 20, 14, 37)  # ==> datetime.datetime(2018, 3, 20, 15, 34)
+dt = datetime(2018, 3, 20, 14, 37)  # ==> datetime.datetime(2018, 3, 20, 15, 34)
 timestamp = time.mktime(dt.timetuple())
-print '指定日期转换为timestamp时间：', timestamp
+print('指定日期转换为timestamp时间：', timestamp)
 # 1521527820.0
 
 """timestamp 转换为 datetime"""
 # 要把 timestamp 转换为 datetime，使用 datetime 提供的 fromtimestamp()
 ab = time.time()  # 1521531309.444 当前时间，新纪元开始当前的秒数
-cd = time.mktime(datetime(2018, 03, 20, 15, 44).timetuple())
-print '新纪元秒数转换日期：', datetime.fromtimestamp(ab).strftime("%Y-%m-%d %H:%M:%S")
+cd = time.mktime(datetime(2018, 3, 20, 15, 44).timetuple())
+print('新纪元秒数转换日期：', datetime.fromtimestamp(ab).strftime("%Y-%m-%d %H:%M:%S"))
 # 2018-03-20 15:44:00
 
 """timestamp 也可以直接被转换到 UTC 标准时区的时间："""
 # 格林威治标准时间
-aa = time.mktime(datetime(2018, 03, 20, 15, 52).timetuple())  # 指定日期转换为秒数
-print '格林威治标准时间1:', datetime.utcfromtimestamp(aa)
+aa = time.mktime(datetime(2018, 3, 20, 15, 52).timetuple())  # 指定日期转换为秒数
+print('格林威治标准时间1:', datetime.utcfromtimestamp(aa))
 # 2018-03-20 07:52:00
 ac = time.mktime(datetime.now().timetuple())  # 当前时间转换为秒数
-print '格林威治标准时间2:', datetime.utcfromtimestamp(ac)
+print('格林威治标准时间2:', datetime.utcfromtimestamp(ac))
 # 2018-03-20 07:56:45
 
 """str 转换为 datetime"""
 # 用户输入的日期和时间是字符串，要处理日期和时间，首先必须把 str 转换为 datetime。
 # 转换方法是通过 datetime.strptime()实现
-print '时间字符串转换日期格式:', datetime.strptime('2018-03-20 16:20:00', '%Y-%m-%d %H:%M:%S')
+print('时间字符串转换日期格式:', datetime.strptime('2018-03-20 16:20:00', '%Y-%m-%d %H:%M:%S'))
 # 2018-03-20 16:20:00
 
 """datetime 转换为 str """
 # datetime.strftime() 格式化datetime 对象
-ao = datetime(2018, 03, 20, 16, 15)
-print ao.strftime('%a %b %d %X')
+ao = datetime(2018, 3, 20, 16, 15)
+print(ao.strftime('%a %b %d %X'))
 # Tue Mar 20 16:15:00
 
 # strftime() 用来格式化datetime 对象,
@@ -83,16 +83,16 @@ print ao.strftime('%a %b %d %X')
 """datetime 加减"""
 # 加减可以直接用 + 和 - 运算符，不过需要导入 timedelta 这个类
 nx = datetime.now()
-print nx
+print(nx)
 ox = nx + timedelta(hours=10)  # 当前时间增加 10 小时
-print ox
+print(ox)
 cx = nx + timedelta(days=2)  # 当前日期增加2天
-print cx
+print(cx)
 bx = nx - timedelta(minutes=60)  # 当前时间减少60 分钟
-print bx
+print(bx)
 dx = nx + timedelta(days=2, hours=10)  # 当前时间增加 2天10小时
-print dx
+print(dx)
 
 """本地时间转换为 UTC 时间"""
 ooo = datetime.utcfromtimestamp(time.mktime(datetime.now().timetuple())).strftime("%Y-%m-%d %H:%M:%S")
-print '本地时间转换为 UTC 时间', ooo
+print('本地时间转换为 UTC 时间', ooo)
