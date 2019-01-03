@@ -20,9 +20,9 @@ try:
     cursor.execute('insert into user (id, name) values (%s, %s)', ['12', 'Oracles'])
     cursor.execute('insert into user values(%s, %s)', ['13', 'JetLIs'])
     cursor.execute('insert into user values(%s, %s)', ['14', 'Mysqls'])
-    print cursor.rowcount
+    print(cursor.rowcount)
 except mysql.connector.errors.IntegrityError as e:
-    print 'MySQL Error: ', e
+    print('MySQL Error: ', e)
 finally:
     conn.commit()  # 提交事务:
     cursor.close()
