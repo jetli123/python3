@@ -7,14 +7,14 @@ import sys
 
 username = "root"
 password = "centos@2018"
-hostname = "192.168.1.213"
+hostname = "192.168.10.109"
 port = 22
 
 try:
     t = paramiko.Transport((hostname, port))
     t.connect(username=username, password=password)
     sftp = paramiko.SFTPClient.from_transport(t)
-    sftp.put(r"D:\Python37\python3_file\python3\test.py", "/root/test.py")  # 上传文件
+    sftp.put(r"C:\Users\JETLi\Downloads\python-jinja2-2.7.2-2.el7.noarch.rpm", "/root/python-jinja2-2.7.2-2.el7.noarch.rpm")  # 上传文件
     # sftp.get(r"/root/Desktop/kvm-create", r"C:\Users\JetLi\Desktop\kvm-create")  # 下载文件
     # sftp.mkdir("/home/userdir1", 0755)  # 创建目录
     # sftp.rmdir("/home/userdir1")  # 删除目录
