@@ -1,0 +1,56 @@
+---
+- hosts: webservers
+  remote_user: root
+  vars:
+    software:
+      - wget
+      - epel-release
+  tasks:
+    - name: run this command and ignore the result
+      shell: hostname
+      ignore_errors: True
+      register: result
+    - debug: msg='{{result.stdout}}'
+    
+    - name: install wget and epel-release
+      apt: name={{software}} state=installed
+      sudo: yes
+      with_items:
+       - '{{software}}'
+      tags: init
+    
+    - name: grarantee and network are running
+      service: name=network state=running
+      sudo: yes
+
+    - name: transfer anaconda-ks.cfg configure file to remote
+      template: src=/root/anaconda-ks.cfg dest=/tmp/anaconda-ks.cfa
+      notify:
+       - restart network
+       
+
+第1行，起始标志，写不写无所谓，官网写了
+
+第2行，定义这个play要作用的主机，多个主机或者多个组的话，用":"分开，也可以用咱们前面的那种正则的形式匹配主机。
+
+第3行，定义了此play在remote端执行时，使用哪个用户执行。楼主这里用一个变量表示，待会可以在命令行输入此变量
+
+第4到8行，可以在play里面定义变量，显然这个变量是局部的，只能在此play里使用。
+
+第9行，task起始标志，可以在里面定义1个或多个task
+
+第10行，为task定义一个name，这样我们执行的时候，会很直观的在终端上打印，不定义name也ok，执行的时候，ansible会默认打印一个action的提示，这样的话，不利于我们观察task执行过程。
+
+第11行，就是真正干活的模块了，shell和command模块，后面的参数，直接写就OK，而其他模块的参数，都要遵循key=value的形式，如第17行和23行。还有就是，ansible里的模块，好像命令行和playbooks里面都是通用的，不像salt-stack里面，命令行的模块和state里面模块是完全分离，不能混用的。
+
+第12行，表示上面的这个模块执行的结果，如果不为0，不加ignore_errors话，出现错误，playbook就不执行了。 加上ignore_errors的话，出现错误，会忽略并继续执行。  当然也可以在shell，command模块中， 使用   shell:  /bin/123 || /bin/true的形式。
+
+第13行，register，把上一个模块执行的结果，保留在result(名字可以任意)这个变量里面，result变量常用的有result.stdout,result.err,result.rc等属性。这一特性，说明ansible能够保留前面task执行的结果，在后面的task里面可以利用这一结果。
+
+第14行,debug，打印的意思。。。把result的stdout给打印出来。  debug后面要遵循，msg=''这种结构
+
+18行，使用sudo，这个sudo只针对当前task有效，想要对全局有效的话，要放到hosts，remote_user等一列。
+
+第17，19，20行，使用ansible内置的循环结构，循环变量用`item`表示，循环列表在with_items里面。楼主，这里用第5-8行定义的变量，来表示循环列表。
+
+第21行，设置标签，当playbooks执行的时候，将只执行tags所对应的task
