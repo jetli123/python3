@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  remote_user: root
+  tasks:
+   - name: run this command and ignore the result
+     shell: hostname
+     ignore_errors: True
+     register: result
+   - debug: msg='{{result.stdout}}'
+
+   - name: upload test.sh
+     copy: src=/root/test.sh dest=/home/ mode=755
+     tags: init 
+
+   - name: upload 1.txt
+     template: src=/root/1.txt dest=/tmp/ mode=644
