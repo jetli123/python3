@@ -1,0 +1,19 @@
+---
+- hosts: webservers
+  remote_user: root
+  vars:
+   software:
+     - httpd
+  tasks:
+   - name: run this command and ignore the result
+     shell: hostname
+     ignore_errors: True
+     register: result
+   - debug: msg='{{result.stdout}}'
+
+   - name: install httpd
+     yum: name={{software}} state=latest    
+     sudo: yes
+     with_items:
+      - '{{software}}'
+     tags: init
