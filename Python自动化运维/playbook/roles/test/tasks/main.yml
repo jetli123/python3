@@ -33,7 +33,7 @@
    line: ""
    dest: /etc/sudoers
    state: present
-   regexp: "^Defaults.*requiretty"
+   regexp: "^Defaults.*requiretty"  # 当修改一行时，regexp通常应该匹配该行的初始状态及其被行替换后的状态，以确保其幂等性。
 
 - name: set abc.txt
   lineinfile:
