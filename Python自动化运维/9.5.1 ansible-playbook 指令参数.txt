@@ -1,0 +1,5 @@
+ansible-playbook test9.yml -i test_hosts --list-host  # 输出匹配主机列表;不执行任何其他操作
+ansible-playbook test9.yml -i test_hosts --list-tags  # 列出所有可用的标签
+ansible-playbook test9.yml -i test_hosts --list-task  # 列出所有要执行的任务
+ansible-playbook test9.yml -i test_hosts --step       # 一步一步:运行前确认每个任务
+ansible-playbook test9.yml -i test_hosts -k           # 请求链接密码
