@@ -1,0 +1,8 @@
+dir_name: /var/
+AOE: ls
+values:
+ - 'ls'
+ - 'ab'
+ - 'cd'
+name_a: centos7.0
+cbd: beijing
