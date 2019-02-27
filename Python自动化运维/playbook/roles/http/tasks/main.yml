@@ -1,0 +1,20 @@
+---
+- hosts: webservers
+  remote_user: root
+  gather_facts: no
+  tasks:
+   - name: install httpd
+     yum: name=httpd state=present
+     register: command_result
+     ignore_errors: True
+     tags: install httpd
+     failed_when: "'failed' in command_result.stdout"
+
+   - name: restart httpd
+     register: result
+     service:
+       name=httpd state=restarted
+     failed_when: "'failed' in result.stdout"
+   
+   - debug: msg={{ result.stdout }}
+    

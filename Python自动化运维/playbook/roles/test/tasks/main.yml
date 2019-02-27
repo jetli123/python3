@@ -1,9 +1,7 @@
-- include_vars: '{{ ansible_distribution }}-{{ ansible_distribution_major_versio
-n }}.yml'
+- include_vars: '{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml'
 
 - name: echo cbd info
-  shell: if [ -z {{ ansible_distribution }} ];then exit 1; else echo {{ ansible_
-distribution_major_version }}; fi;
+  shell: if [ -z {{ ansible_distribution }} ];then exit 1; else echo {{ ansible_distribution_major_version }}; fi;
   register: command_result
   failed_when: command_result.stdout == ""
   changed_when: False

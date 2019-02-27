@@ -1,0 +1,52 @@
+#- name: install epel for CentOS 7
+#  yum: name={{ item }} state=present
+#  with_items:
+#   - '{{ url_7 }}'
+#   - '{{ url_rpm }}'
+
+#- name: install nc and netstat
+#  ignore_errors: True
+#  yum: 
+#    name=['netstat'] 
+#    state=present 
+#    download_only=yes 
+#    update_cache=yes
+
+- name: replace file
+  lineinfile:
+    line: ''
+    dest: /tmp/1.txt
+    state: present
+    regexp: "^ls.*$"
+
+#- name: Adds an SSH authorized key
+#  authorized_key: 
+#   user: root
+#   state: present
+#   key: "{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+
+- name: Adds an SSH authorized key
+  authorized_key:
+   user: root
+   state: present
+   key: "{{ lookup('file', lookup('env', 'HOME') + '/.ssh/id_rsa.pub') }}"
+
+- name: set nameserver
+  template: src=resolv.conf dest=/tmp/resolv.conf
+
+- name: write to file
+  shell: echo "{{ item.split(':')[1] }}" >/tmp/1.txt
+#  delegate_to: {{ items.split(':')[1] }}
+  with_items:  
+    - "{{ sids.split(',') }}"
+
+- name: split str to template
+  set_fact: 
+    IP: "{{ item.split(':')[1] }}"
+  with_items: "{{ sids.split(',') }}"
+  register: split_result
+
+- debug: msg={{ split_result }}
+
+- name: template file
+  template: src=1.conf.j2 dest=/tmp/1.conf

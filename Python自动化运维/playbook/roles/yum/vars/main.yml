@@ -1,0 +1,6 @@
+url_7: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+url_rpm: https://repository.it4i.cz/mirrors/repoforge/redhat/el7/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el7.rf.x86_64.rpm
+nameserver:
+  - '10.100.67.11'
+  - '10.100.78.13'
+  - '10.102.43.103'

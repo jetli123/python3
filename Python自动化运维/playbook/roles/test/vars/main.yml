@@ -1,6 +1,6 @@
 dir_name: /var/
 AOE: ls
-values:
+values: 
  - 'ls'
  - 'ab'
  - 'cd'

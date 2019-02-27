@@ -1,0 +1,53 @@
+- name: pong the machine
+  ping:
+
+- name: check dir for /
+  shell: "{{ AOE }} /"
+  register: command_result
+  failed_when: "'failed' in command_result.stdout"
+  changed_when: command_result.rc == 0
+
+- debug:
+   msg={{ command_result.stdout }}
+
+- name: check dir for var
+  shell: "ls {{ dir_name }}"
+  register: command_result
+  ignore_errors: True
+  changed_when: command_result.rc == 0
+
+- debug: msg={{ command_result.stdout }}
+
+- name: copy file to dir for tmp
+  ignore_errors: True
+  copy: src=test.sh dest=/tmp/ mode=755
+
+- name: copy file to tmp
+  copy: src="{{ item }}" dest=/tmp/ mode=755
+  ignore_errors: True
+  with_items:
+    - '1.txt'
+    - '2.txt'
+
+- name: set /tmp/1.txt file
+  ignore_errors: True
+  lineinfile:
+    line: "{{ item }}"
+    dest: /tmp/1.txt
+    state: present
+    create: yes
+  with_items:
+    - "{{ values }}"
+
+- name: set /tmp/2.txt file
+  lineinfile:
+    line: "{{ item }}"
+    dest: /tmp/2.txt
+    state: present
+    create: yes
+  with_items:
+    - '10.121.70.193\t\tbigdata1'
+    - '10.121.70.210\t\tbigdata7'
+    - '10.121.93.74\t\tbigdata8'  
+    - '10.155.114.76\t\tbigdata9'
+    - '10.155.114.23\t\tbigdata10'

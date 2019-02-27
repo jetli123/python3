@@ -1,0 +1,7 @@
+- name: creates an entry like "0 5,2 * * *"
+  cron:
+    name: "check dirs"
+    minute: "*/10"
+    job: "/usr/bin/ls -lrt /tmp >>/tmp/1.log 2>&1"
+    cron_file: testops
+    user: root
