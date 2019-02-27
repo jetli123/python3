@@ -22,7 +22,7 @@
 - name: write to file
   lineinfile:
    line: "zabbix\t\tALL=NOPASSWD:/opt/MegaRAID/storcli/storcli64"
-   dest: /etc/sudoers.d/zabbix
+   path: /etc/sudoers.d/zabbix
    state: present
    create: yes
 
@@ -31,14 +31,16 @@
 - name: update soduers file
   lineinfile:
    line: ""
-   dest: /etc/sudoers
+   path: /etc/sudoers
    state: present
    regexp: "^Defaults.*requiretty"  # 当修改一行时，regexp通常应该匹配该行的初始状态及其被行替换后的状态，以确保其幂等性。
-
+                                    # 对于state=present，如果找到要替换的模式。只有最后一行将被替换。
+                                    # 对于state= absent，要删除的行模式。
+                                    # 如果正则表达式不匹配，这一行将按照' insertbefore '或' insertafter '设置添加到文件中。
 - name: set abc.txt
   lineinfile:
     line: "{{ item.line }}"
-    dest: "{{ item.file }}"
+    path: "{{ item.file }}"
     state: present
     create: yes
     regexp: "{{ item.regex }}"
