@@ -18,22 +18,24 @@ with_list is directly replaced by loop.
   loop:
     - one
     - two
-
+#
+#
 
 with_items
 with_items is replaced by loop and the flatten filter.
 
-- name: with_items
+- name: with_items  # 返回的 item 都是 key 值
   debug:
     msg: "{{ item }}"
   with_items: "{{ items }}"
 
-- name: with_items -> loop
+- name: with_items -> loop  # 返回的 item 都是 key 值
   debug:
     msg: "{{ item }}"
   loop: "{{ items|flatten(levels=1) }}"
-  
-  
+#  
+#  
+
 with_indexed_items
 with_indexed_items is replaced by loop, the flatten filter and loop_control.index_var.
 
@@ -48,8 +50,8 @@ with_indexed_items is replaced by loop, the flatten filter and loop_control.inde
   loop: "{{ items|flatten(levels=1) }}"
   loop_control:
     index_var: index
-
-
+#
+#
 with_flattened
 with_flattened is replaced by loop and the flatten filter.
 
@@ -62,8 +64,8 @@ with_flattened is replaced by loop and the flatten filter.
   debug:
     msg: "{{ item }}"
   loop: "{{ items|flatten }}"
-  
-  
+#  
+# 
 with_together
 with_together is replaced by loop and the zip filter.
 
@@ -78,22 +80,22 @@ with_together is replaced by loop and the zip filter.
   debug:
     msg: "{{ item.0 }} - {{ item.1 }}"
   loop: "{{ list_one|zip(list_two)|list }}"
-  
-  
+ # 
+ # 
 with_dict
 with_dict can be substituted by loop and either the dictsort or dict2items filters.
 
-- name: with_dict
+- name: with_dict  # 返回的 item  是dict {"key": value} 格式
   debug:
     msg: "{{ item.key }} - {{ item.value }}"
   with_dict: "{{ dictionary }}"
 
-- name: with_dict -> loop (option 1)
+- name: with_dict -> loop (option 1)  # 返回的 item  是dict {"key": value} 格式
   debug:
     msg: "{{ item.key }} - {{ item.value }}"
   loop: "{{ dictionary|dict2items }}"
 
-- name: with_dict -> loop (option 2)
+- name: with_dict -> loop (option 2)  # 返回的 item  是list 格式[value1, value2]
   debug:
     msg: "{{ item.0 }} - {{ item.1 }}"
   loop: "{{ dictionary|dictsort }}"
