@@ -1,0 +1,25 @@
+delegate_to 和 connection 用法一样，
+希望在一个主机上执行任务，并引用其他主机，请在任务上使用“delegate_to”关键字
+
+run_once: 在某些情况下，可能只需要为一批主机运行一次任务。这可以通过在任务上配置“run_once”来实现:
+delegate_to、run_once 和 serial 一起使用
+serial 每次批量执行主机的数量，可以用百分比，主机组数量的百分比执行
+例如：
+---
+- hosts: webservers
+  remote_user: root
+  gather_facts: no
+  serial: 2   # 每次2个主机执行task
+  tasks:
+   - name: ls tmp dir
+     shell: ls /root/
+     register: command_result
+     changed_when: false
+
+   - name: echo local in file
+     shell: echo -e "{{ command_result.stdout_lines }}\n" >>/tmp/1.txt
+     run_once: yes # serial 2 两个主机执行，其中第一个主机执行，第二个不执行
+     #delegate_to: localhost
+     connection: local  # 跳过远程主机，ansible 控制机执行操作 shell 模块
+
+# 如果没有 serial 模块控制，每个主机组执行到 “echo local in file” 这个task时候，都会执行connection: local 
