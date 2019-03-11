@@ -261,3 +261,17 @@
   loop: "{{ items|flatten(levels=1) }}"
   loop_control:
     index_var: index
+    
+(25)、pause 暂停 时间
+- name: test 1
+  pause:
+    seconds: 10
+  delegate_to: localhost
+
+
+(26)、vars_prompt # 手动输入参数
+vars_prompt:
+    - name: 'a'
+      prompt: "Please input "
+      private: no
+
