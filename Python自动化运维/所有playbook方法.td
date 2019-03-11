@@ -212,19 +212,19 @@
     # - {'a': '^(redis.port)=.*', 'b': '\1={{ sids.value.port }}'}
     # - {'a': '(<property) (name="registryPort") value=".*?"/>', 'b': '\1 \2 value="{{ sids.value.port }}"/>'}
 
-(19)、with_items
+(19)、with_list
 - name: list 
   debug:
      msg: "{{ item }}"
-  with_items:
+  with_list:
      - name
      - age
      - score
 
-(20)、with_list
+(20)、with_items
 - name: items
   debug:
      msg: "{{ item }}"
-  with_list:
+  with_items:
      - ['a', 'b', 'c']
     
