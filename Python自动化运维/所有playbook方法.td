@@ -221,7 +221,7 @@
      - age
      - score    
 
-(19)、with_list
+(20)、with_list
 - name: list 
   debug:
      msg: "{{ item }}"
@@ -248,3 +248,16 @@
   with_indexed_items: 
     - ['A', 'B', 'C']
 
+(23)、loop (with_items)循环
+- name: with_items -> loop
+  debug:
+    msg: "{{ item }}"
+  loop: "{{ items|flatten(levels=1) }}"
+  
+(24)、loop (with_indexed_items)
+- name: with_indexed_items -> loop
+  debug:
+    msg: "{{ index }} - {{ item }}"
+  loop: "{{ items|flatten(levels=1) }}"
+  loop_control:
+    index_var: index
