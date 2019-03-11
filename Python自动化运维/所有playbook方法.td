@@ -212,6 +212,15 @@
     # - {'a': '^(redis.port)=.*', 'b': '\1={{ sids.value.port }}'}
     # - {'a': '(<property) (name="registryPort") value=".*?"/>', 'b': '\1 \2 value="{{ sids.value.port }}"/>'}
 
+(19)、loop 循环 list 
+- name: list 
+  debug:
+     msg: "{{ item }}"
+  loop:
+     - name
+     - age
+     - score    
+
 (19)、with_list
 - name: list 
   debug:
@@ -220,11 +229,22 @@
      - name
      - age
      - score
+     
+ 
 
-(20)、with_items
+     
+(21)、with_items
 - name: items
   debug:
      msg: "{{ item }}"
   with_items:
      - ['a', 'b', 'c']
-    
+ 
+
+(22)、with_indexed_items
+- name: with_indexed_items
+  debug:
+    msg: "{{ item.0 }} - {{ item.1 }}"
+  with_indexed_items: 
+    - ['A', 'B', 'C']
+
