@@ -142,17 +142,31 @@
 - name: replace httpd.conf
   replace:
     path: "/tmp/httpd.conf"
-    regexp: '(NameVirtualHost|Listen\s+)80'
+    regexp: '^(NameVirtualHost|Listen\s+)80'
     replace: '\1 127.0.0.1:8080'
     backup: yes
 
+- name: replace test 
+  replace:
+    path: /root/2.txt
+    regexp: '(<name>)COK1(<name>.*)'
+    replace: '\1COK2\2'
+
+- name: replace 2
+  replace:
+    path: /root/2.txt
+    regexp: '(-Djava.rmi.server.hostname)=.+?\s+.*'
+    replace: '\1={{ inventory_hostname }}'
+
+
 (14)、become_method
 - name: test connect
-shell: ls /
-become: yes
-remote_user: lilei
-ignore_errors: True
-become_method: sudo
+  shell: ls /
+  become: yes
+  remote_user: lilei
+  ignore_errors: True
+  become_method: sudo
+
 
 (15)、tags  # ansible-playbook webservers -i test_hosts --tags=haha  指定这个tags haha标签的task 执行
 - name: config 1.txt
@@ -176,5 +190,41 @@ become_method: sudo
      - lilei
      - jetli
 
-(17)、
- 
+(17)、loop 循环字典 dict
+- name: replace 3
+  debug:
+   # msg: "{{ item.0 }} {{ item.1 }}" # -->3
+    msg: "{{ item.key }} {{ item.value }}" # --> 1,2,4
+  loop: "{{ sidlist|dict2items }}" # 2
+   # loop: "{{ sidlist|dictsort }}" # 3
+   # loop: "{{ lookup ('dict', sidlist) }}" # 4
+
+(18)、with_dict
+- name: replace port info
+  replace:
+    path: /root/1.txt
+    regexp: "{{ item.a }}"
+    replace: "{{ item.b }}"
+    # regexp: '(userId=)+tm'
+    # replace: '\1cm'
+  with_dict: 
+    - "{{ sids }}"
+    # - {'a': '^(redis.port)=.*', 'b': '\1={{ sids.value.port }}'}
+    # - {'a': '(<property) (name="registryPort") value=".*?"/>', 'b': '\1 \2 value="{{ sids.value.port }}"/>'}
+
+(19)、with_list
+- name: list 
+  debug:
+     msg: "{{ item }}"
+  with_list:
+     - name
+     - age
+     - score
+
+(20)、with_items
+- name: items
+  debug:
+     msg: "{{}}"
+  with_items:
+     - ['a', 'b', 'c']
+    
