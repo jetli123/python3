@@ -130,10 +130,6 @@ class Inventory(object):
             conn.close()
 
 
-    def example_inventory(self):
-        return { '_meta': { 'hostvars': {} } }
-
-
     # Empty inventory for testing.
     def empty_inventory(self):
         return { '_meta': { 'hostvars': {} } }
