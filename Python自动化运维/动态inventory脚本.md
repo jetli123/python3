@@ -65,6 +65,8 @@ class Inventory(object):
             for i in test:
                 ###
                 host_vars = {}
+                source_vars = {}
+                to_SID = []
                 from_sid = []
                 from_redis_instance = []
                 to_sid = []
@@ -105,7 +107,9 @@ class Inventory(object):
                     host_vars["to_sid"] = to_sid
                     host_vars["to_ip"] = to_ip
                     self.hosts_dicts[self.from_ip] = host_vars
-
+                to_SID.append(self.to_sid)
+                source_vars["to_sid"] = to_SID
+                self.hosts_dicts[self.to_ip] = source_vars
 
 
             ##################################
