@@ -69,6 +69,7 @@ class Inventory(object):
                 to_SID = []
                 from_sid = []
                 from_redis_instance = []
+                from_redis_instance2 = []
                 to_sid = []
                 to_ip = []
                 ###
@@ -90,9 +91,8 @@ class Inventory(object):
                         self.hosts_dicts[k]["to_sid"].append(self.to_sid)
                         self.hosts_dicts[k]["to_ip"].append(self.to_ip)
                         point = 1
-
-                    else:
-                        point = 0
+                    #else:
+                    #    point = 0
                 ###
 
                 if point == 1:
@@ -107,9 +107,22 @@ class Inventory(object):
                     host_vars["to_sid"] = to_sid
                     host_vars["to_ip"] = to_ip
                     self.hosts_dicts[self.from_ip] = host_vars
-                to_SID.append(self.to_sid)
-                source_vars["to_sid"] = to_SID
-                self.hosts_dicts[self.to_ip] = source_vars
+                point = 0
+                for k,v in self.hosts_dicts.items():
+                    if self.to_ip == k:
+                        self.hosts_dicts[k]["from_redis_instance"].append(self.from_redis_instance)
+                        self.hosts_dicts[k]["to_sid"] = self.to_sid
+                        point = 1
+                    #else:
+                    #    point = 0
+                if point == 1:
+                    pass
+                elif point == 0:
+                    to_SID.append(self.to_sid)
+                    from_redis_instance2.append(self.from_redis_instance)
+                    source_vars["to_sid"] = to_SID
+                    source_vars["from_redis_instance"] = from_redis_instance2
+                    self.hosts_dicts[self.to_ip] = source_vars
 
 
             ##################################
@@ -120,6 +133,12 @@ class Inventory(object):
                 all_sid.append(self.to_sid)
                 from_all_sid.append(self.from_sid)
                 to_all_sid.append(self.to_sid)
+            for i in all_sid:
+                if not i in self.all_sid:
+                    self.all_sid.append(i)
+            for i in to_all_sid:
+                if not i in self.to_all_sid:
+                    self.to_all_sid.append(i)
             vars_dict["all_sid"] = all_sid
             vars_dict["from_all_sid"] = from_all_sid
             vars_dict["to_all_sid"] = to_all_sid
