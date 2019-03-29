@@ -275,3 +275,18 @@ vars_prompt:
       prompt: "Please input "
       private: no
 
+(27)、with_nested # 嵌套循环
+- name: give users access to multiple databases
+  mysql_user: name={{ item[0] }} priv={{ item[1] }}.*:ALL append_privs=yes password=foo
+  with_nested:
+    - [ 'alice', 'bob' ]
+    - [ 'clientdb', 'employeedb', 'providerdb' ]
+
+item[0]是循环的第一个列表的值['alice','bob']。item[1]是第二个列表的值。表示循环创建alice和bob两个用户，并且为其赋予在三个数据库上的所有权限。
+也可以将用户列表事先赋值给一个变量：
+
+- name: here, 'users' contains the above list of employees
+  mysql_user: name={{ item[0] }} priv={{ item[1] }}.*:ALL append_privs=yes password=foo
+  with_nested:
+    - "{{users}}"
+    - [ 'clientdb', 'employeedb', 'providerdb' ]
