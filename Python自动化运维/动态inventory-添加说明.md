@@ -1,23 +1,31 @@
 #!/usr/bin/env python
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 
 import argparse
 import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
+#reload(sys)
+#sys.setdefaultencoding('utf-8')
 import mysql.connector
 
 try:
     import json
 except ImportError:
     import simplejson as json
+
+test = [
+(),
+()
+]
+
+# for example
+"""
 test = [
 (115,8050),
 (134,8103),
 (234,8907),
 (345,8317),
 (350,8317)
-]
+]"""
 
 
 class Inventory(object):
@@ -29,8 +37,8 @@ class Inventory(object):
         self.metas_dicts = {}
         self.group_vars_dict = {}
         self.group_hosts_dict = []
-        self.all_sid = []
-        self.to_all_sid = []
+		self.all_sid = []
+		self.to_all_sid = []
         self.from_ip = ""
         self.from_sid = ""
         self.from_redis_instance = ""
@@ -59,14 +67,15 @@ class Inventory(object):
         all_sid = []
         from_all_sid = []
         to_all_sid = []
+        conn = mysql.connector.connect(user='root', password='mysql', host='127.0.0.1', database='test', port='3306')
+        cursor = conn.cursor()
         try:
-            conn = mysql.connector.connect(user='root', password='mysql', host='localhost', database='im30', port='3306')
-            cursor = conn.cursor()
             for i in test:
                 # 循环后重新定义dict 和 list 
                 host_vars = {}
-                source_vars = {}
-                to_SID = []
+				source_vars = {}
+				to_SID = []
+				from_SID = []
                 from_sid = []
                 from_redis_instance = []
                 from_redis_instance2 = []
@@ -79,10 +88,10 @@ class Inventory(object):
                 self.from_sid = str(var_[0][3:])
                 self.from_ip = str(var_[1])
                 self.from_redis_instance = str(var_[2])
-                # 获取移zone 目的主机信息
+				# 获取移zone 目的主机信息
                 cursor.execute("select zone, ip_inner from tbl_webserver where svr_name like '%%s%'", [i[1]])
                 var__ = cursor.fetchone()
-                # 为目的主机属性 赋值
+				# 为目的主机属性 赋值
                 self.to_sid = str(var__[0][3:])
                 self.to_ip = str(var__[1])
                 # 判断迁移zone的主机中，如果有相同主机，直接添加到当前主机dict key值的列表中
@@ -93,11 +102,9 @@ class Inventory(object):
                         self.hosts_dicts[k]["to_sid"].append(self.to_sid)
                         self.hosts_dicts[k]["to_ip"].append(self.to_ip)
                         point = 1
-                    #else:
-                    #    point = 0
                 if point == 1:
                     pass
-                # 迁移zone的主机中, 没有相同的主机
+				# 迁移zone的主机中, 没有相同的主机
                 elif point == 0:
                     from_sid.append(self.from_sid)
                     from_redis_instance.append(self.from_redis_instance)
@@ -107,49 +114,50 @@ class Inventory(object):
                     host_vars["from_redis_instance"] = from_redis_instance
                     host_vars["to_sid"] = to_sid
                     host_vars["to_ip"] = to_ip
-                    self.hosts_dicts[self.from_ip] = host_vars
-
-                point = 0
-                for k,v in self.hosts_dicts.items():
-                    if self.to_ip == k:
-                        self.hosts_dicts[k]["from_redis_instance"].append(self.from_redis_instance) 
-                        self.hosts_dicts[k]["to_sid"] = self.to_sid
-                        point = 1
-                    #else:
-                #       point = 0
-                if point == 1:
-                    pass
-                elif point == 0:
-                    to_SID.append(self.to_sid)
-                    from_redis_instance2.append(self.from_redis_instance)
-                    source_vars["to_sid"] = to_SID
-                    source_vars["from_redis_instance"] = from_redis_instance2
-                    self.hosts_dicts[self.to_ip] = source_vars
-                # 获取组变量
+					self.hosts_dicts[self.from_ip] = host_vars
+				point = 0
+				# 目的主机中, 有对应相同的主机，添加移zone服id 到 列表中
+				for k,v in self.hosts_dicts.items():
+					if self.to_ip == k:
+					    self.hosts_dicts[k]["from_redis_instance"].append(self.from_redis_instance) 
+					    self.hosts_dicts[k]["to_sid"].append(self.to_sid)
+					    self.hosts_dicts[k]["from_sid"].append(self.from_sid)
+				        point = 1
+				if point == 1:
+					pass
+				elif point == 0:
+	                to_SID.append(self.to_sid)
+		            from_SID.append(self.from_sid)
+		            from_redis_instance2.append(self.from_redis_instance)
+		            source_vars["to_sid"] = to_SID
+		            source_vars["from_redis_instance"] = from_redis_instance2
+		            source_vars["from_sid"] = from_SID
+		            self.hosts_dicts[self.to_ip] = source_vars
+            	# 获取组变量
                 group_hosts_dict.append(self.from_ip)  # 添加迁移zone 主机 address到 list
                 group_hosts_dict.append(self.to_ip)   # 添加目的主机 address到 list
                 all_sid.append(self.from_sid)        # 添加所有迁移zone主机上的服id 到所有服id的list中
-                all_sid.append(self.to_sid)         # 添加所有目的主机上的服id 到所有服id的 list中
+                all_sid.append(self.to_sid)	    # 添加所有目的主机上的服id 到所有服id的 list中
                 from_all_sid.append(self.from_sid) # 添加所有迁移zone的主机上的服id 到 所有迁移服id 的list 中
                 to_all_sid.append(self.to_sid)    # 添加所有目的主机上的服id 到所有 目的服id 的list 中
-            # 去重
-            for i in all_sid:
-                if not i in self.all_sid:
-                    self.all_sid.append(i)
-            for i in to_all_sid:
-                if not i in self.to_all_sid:
-                    self.to_all_sid.append(i)
+	        # 去重
+	        for i in all_sid:
+		        if not i in self.all_sid:
+		            self.all_sid.append(i)
+	        for i in to_all_sid:
+		        if not i in self.to_all_sid:
+		            self.to_all_sid.append(i)
             # 组装字典
-            vars_dict["all_sid"] = self.all_sid
-            vars_dict["from_all_sid"] = from_all_sid
-            vars_dict["to_all_sid"] = self.to_all_sid
-            # 赋值 组装字典给 自定义组变量属性
+            vars_dict["all_sid"] = ','.join(self.all_sid)
+            vars_dict["from_all_sid"] = ','.join(from_all_sid)
+            vars_dict["to_all_sid"] = ','.join(self.to_all_sid)
+	        # 赋值 组装字典给 自定义组变量属性
             self.group_vars_dict = vars_dict
-            # 去重所有主机信息的列表中的IP地址
+	        # 去重所有主机信息的列表中的IP地址
             for i in group_hosts_dict:
                 if not i in self.group_hosts_dict:
                     self.group_hosts_dict.append(i)
-            # 调用方法 返回 主机组和组变量
+	        # 调用方法 返回 主机组和组变量
             self.add_host_var(self.hosts_dicts)
             self.add_group_var(self.group_hosts_dict, self.group_vars_dict)
             return self.inventory
