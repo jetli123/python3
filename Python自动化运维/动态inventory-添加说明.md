@@ -27,9 +27,8 @@ test = [
 (350,8317)
 ]"""
 
-
 class Inventory(object):
-    
+
     def __init__(self):
         self.read_cli_args()
         self.inventory = {}
@@ -44,6 +43,20 @@ class Inventory(object):
         self.from_redis_instance = ""
         self.to_sid = ""
         self.to_ip = ""
+        self.project_name = "WarZ"
+        self.project_info = {
+            'WarZ': {
+                'passwd': '123',
+                'hostname': '127.0.0.1',
+                'db_name': 'abc'
+            },
+            'LS': {
+                'passwd': '123',
+                'hostname': '127.0.0.1',
+                'db_name': 'abc'
+            }
+        }
+
 
         if self.args.list:
             self.db_info()
@@ -67,11 +80,11 @@ class Inventory(object):
         all_sid = []
         from_all_sid = []
         to_all_sid = []
-        conn = mysql.connector.connect(user='root', password='mysql', host='127.0.0.1', database='test', port='3306')
-        cursor = conn.cursor()
+        conn = mysql.connector.connect(user='root', password=self.project_info[self.project_name]['passwd'], host=self.project_info[self.project_name]['hostname'], database=self.project_info[self.project_name]['db_name'], port='3306', charset='utf8')
+        cursor = conn.cursor(buffered=True)
         try:
             for i in test:
-                # 循环后重新定义dict 和 list 
+                # 循环后重新定义dict 和 list
                 host_vars = {}
                 source_vars = {}
                 to_SID = []
@@ -119,7 +132,7 @@ class Inventory(object):
                 # 目的主机中, 有对应相同的主机，添加移zone服id 到 列表中
                 for k,v in self.hosts_dicts.items():
                     if self.to_ip == k:
-                        self.hosts_dicts[k]["from_redis_instance"].append(self.from_redis_instance) 
+                        self.hosts_dicts[k]["from_redis_instance"].append(self.from_redis_instance)
                         self.hosts_dicts[k]["to_sid"].append(self.to_sid)
                         self.hosts_dicts[k]["from_sid"].append(self.from_sid)
                         point = 1
@@ -137,7 +150,7 @@ class Inventory(object):
                 group_hosts_dict.append(self.from_ip)  # 添加迁移zone 主机 address到 list
                 group_hosts_dict.append(self.to_ip)   # 添加目的主机 address到 list
                 all_sid.append(self.from_sid)        # 添加所有迁移zone主机上的服id 到所有服id的list中
-                all_sid.append(self.to_sid)	    # 添加所有目的主机上的服id 到所有服id的 list中
+                all_sid.append(self.to_sid)         # 添加所有目的主机上的服id 到所有服id的 list中
                 from_all_sid.append(self.from_sid) # 添加所有迁移zone的主机上的服id 到 所有迁移服id 的list 中
                 to_all_sid.append(self.to_sid)    # 添加所有目的主机上的服id 到所有 目的服id 的list 中
             # 去重
@@ -181,14 +194,14 @@ class Inventory(object):
         self.args = parser.parse_args()
 
     #返回主机组信息字典格式
-    def add_host_var(self, hosts_dicts=None):  
+    def add_host_var(self, hosts_dicts=None):
         meta_dict = self.inventory.get( "_meta", {} )
         hosts_dict = meta_dict.get( "hostvars", {} )
         meta_dict["hostvars"] = hosts_dicts
         self.inventory["_meta"] = meta_dict
 
     # 返回组变量字典格式
-    def add_group_var(self, group_host_dict, group_var_dict):  
+    def add_group_var(self, group_host_dict, group_var_dict):
         group_dict = self.inventory.get( "group", {} )
         group_hosts_dict = group_dict.get( 'hosts', [] )
         group_vars_dict = group_dict.get( 'vars', {} )
