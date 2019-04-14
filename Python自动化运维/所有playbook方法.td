@@ -296,3 +296,10 @@ item[0]是循环的第一个列表的值['alice','bob']。item[1]是第二个列
   copy: src={{ item }} dest=/usr/lib64/ganglia/ owner=root mode=755
   with_fileglob:
     - gmetric-*
+ 
+ (29)、 get_url 将文件从http、https或者 ftp下载到节点上
+- name: download foo.conf
+  get_url: 
+    url: http://xiaorui.cc/path/file.conf 
+    dest: /etc/foo.conf 
+    mode: 0440
