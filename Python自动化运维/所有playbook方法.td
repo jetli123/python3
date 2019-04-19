@@ -297,9 +297,24 @@ item[0]是循环的第一个列表的值['alice','bob']。item[1]是第二个列
   with_fileglob:
     - gmetric-*
  
- (29)、 get_url 将文件从http、https或者 ftp下载到节点上
+(29)、 get_url 将文件从http、https或者 ftp下载到节点上
 - name: download foo.conf
   get_url: 
     url: http://xiaorui.cc/path/file.conf 
     dest: /etc/foo.conf 
     mode: 0440
+  
+(30)、 modprobe 加载内核模块
+- name: modprobe nf_conntrack
+  modprobe:
+   name: nf_conntrack
+   state: present
+
+(31)、unarchive  解压文件在 
+- name: unarchive jdk
+  unarchive:
+    src: /home/jdk.tar.gz
+    dest: /home/
+    mode: 0755
+    remote_src: yes # 在remote matchine src: 目录
+    # copy: no  # 2.4之前用 这个
