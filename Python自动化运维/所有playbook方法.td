@@ -291,7 +291,7 @@ item[0]是循环的第一个列表的值['alice','bob']。item[1]是第二个列
     - "{{users}}"
     - [ 'clientdb', 'employeedb', 'providerdb' ]
 
-(28)、with_fileglob # 列出与模式匹配的文件
+(28)、with_fileglob # 列出与模式匹配的文件,遍历文件夹下的文件，不包括文件夹，roles可为相对路径
 - name: copy ganglia script
   copy: src={{ item }} dest=/usr/lib64/ganglia/ owner=root mode=755
   with_fileglob:
