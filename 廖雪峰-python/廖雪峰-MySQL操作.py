@@ -20,6 +20,9 @@ try:
     cursor.execute('insert into user (id, name) values (%s, %s)', ['12', 'Oracles'])
     cursor.execute('insert into user values(%s, %s)', ['13', 'JetLIs'])
     cursor.execute('insert into user values(%s, %s)', ['14', 'Mysqls'])
+    # 执行查询 通过 like 拼接 %p
+    query = "SELECT * FROM blah WHERE email LIKE %s limit 10"
+    cursor.execute(query,("%" + p))
     print(cursor.rowcount)
 except mysql.connector.errors.IntegrityError as e:
     print('MySQL Error: ', e)
