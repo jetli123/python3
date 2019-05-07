@@ -1,7 +1,0 @@
-- name: recursively create file
-  file: state=directory recurse=yes path=/tmp/{{ item }}
-  with_items:
-    - back
-    - temp
-    - recycle
-  changed_when: False
