@@ -1,0 +1,239 @@
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"github.com/sheerun/queue"
+	"net/http"
+
+	//"encoding/json"
+
+	"flag"
+	"fmt"
+	MQTT "github.com/eclipse/paho.mqtt.golang"
+	"github.com/go-redis/redis"
+	"github.com/kataras/iris/v12"
+	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
+	"github.com/olivere/elastic"
+	//"io/ioutil"
+	"log"
+	//"net/http"
+	//"os"
+	"github.com/enriquebris/goconcurrentqueue"
+	"strconv"
+	//"strings"
+	"sync/atomic"
+	"time"
+)
+
+// var SendUrls = make(chan string,1024*1024*1024)
+var call_proc_count int64
+var event_send uint64
+var queue_len int64
+var process_count uint64
+var enable_log bool
+var enable_es bool = true
+var isUseServer = true
+var fifo = goconcurrentqueue.NewFIFO()
+var step int64
+
+var q_message = queue.New()
+
+func makeTimestamp() int64 {
+	return time.Now().UnixNano() / (int64(time.Millisecond) / int64(time.Nanosecond))
+}
+
+//func onMessageReceived(client MQTT.Client, message MQTT.Message) {
+//	process(message.Topic(),message.Payload())
+//}
+
+func process(topic string, content []byte, redisclient *redis.Client) {
+	atomic.AddUint64(&process_count, 1)
+	if enable_log {
+		log.Println(string(content))
+	}
+
+	if enable_es {
+		//fifo.Enqueue(string(content))
+		atomic.AddInt64(&queue_len, 1)
+		q_message.Append(string(content))
+	}
+}
+
+func insertdata(client *elastic.Client, data []string, context context.Context) {
+
+	if !enable_es {
+		return
+	}
+
+	type chatlogItem struct {
+		Appid      string `json:"Appid"`
+		Uid        string `json:"Uid"`
+		Roomid     string `json:"Roomid"`
+		Content    string `json:"Content"`
+		Srclang    string `json:"Lang"`
+		Username   string `json:"Username"`
+		Sid        string `json:"Sid"`
+		Msgtype    string `json:"Msgtype"`
+		CreateTime int64
+	}
+
+	bulkRequest := client.Bulk()
+
+	date := time.Now().Format("2006-01-02")
+	index_name := "chatlog-" + date
+	step = 2000
+	for _, data_item := range data {
+		var item chatlogItem
+		json.Unmarshal([]byte(data_item), &item)
+		item.CreateTime = makeTimestamp()
+		req := elastic.NewBulkIndexRequest().Index(index_name).Doc(item)
+		bulkRequest = bulkRequest.Add(req)
+	}
+	step = 2001
+	bulkResponse, err := bulkRequest.Do(context)
+	step = 2002
+	if err != nil {
+		fmt.Println(err)
+	}
+	if bulkResponse != nil {
+
+	}
+	step = 2003
+}
+
+func main() {
+
+	filename, _ := rotatelogs.New("logs/access_%Y%m%d.log")
+	log.SetOutput(filename)
+	enable_log = true
+
+	//for ;; {
+	//	makeurlcallList("100002","123456", PushUrlDatas{PushUrlData{Uid:"1",Content:"test"}})
+	//}
+
+	pRedis_address := flag.String("redis", "10.0.0.19:16397", "redis server eg: -redis=10.0.0.19:16397")
+	pRedis_db := flag.Int("redisdb", 1, "redis db eg: -redisdb=1")
+	pport_listen := flag.String("p", ":18080", "port listen eg: -p=:18080")
+	pMqttServer := flag.String("mq", "tcp://10.0.0.19:1883", "mqtt borker eg: -mp=tcp://10.0.0.19:1883")
+	pESServer := flag.String("es", "http://10.0.20.17:9200", "ES Server eg: -es=http://10.0.20.17:9200")
+	flag.Parse()
+
+	httpClient := &http.Client{}
+	reqest, err := http.NewRequest("GET", *pESServer, nil)
+	reqest.Header.Add("Authorization", "ApiKey ZmFCVERvb0I1QzJVMzFybmlNSjQ6SS1acWdWTzJScUM0a1RWNks2THp6QQ==")
+
+	clientes, err := elastic.NewClient(elastic.SetSniff(false), elastic.SetHttpClient(httpClient))
+	if err == nil {
+		go func() {
+			datas := []string{}
+			for {
+				step = 1000
+				value := q_message.Pop()
+				atomic.AddInt64(&queue_len, -1)
+				step = 1001
+				datas = append(datas, value.(string))
+				step = 1002
+				if len(datas) >= 500 {
+					step = 1003
+					insertdata(clientes, datas, context.Background())
+					step = 1004
+					datas = []string{}
+					step = 1005
+				}
+			}
+
+		}()
+	}
+	app := iris.Default()
+	app.Logger().SetLevel("disable")
+	redisClient := redis.NewClient(&redis.Options{
+		Addr:       *pRedis_address,
+		PoolSize:   100,
+		MaxRetries: 2,
+		Password:   "",
+		DB:         *pRedis_db,
+	})
+	clientid := "PushClientId" + strconv.FormatInt(makeTimestamp(), 10)
+
+	connOpts := MQTT.NewClientOptions().
+		AddBroker(*pMqttServer).
+		SetClientID(clientid).
+		SetCleanSession(true)
+
+	connOpts.SetUsername("cok_server")
+	connOpts.SetPassword("eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJuYW1lIjoiYm9iIiwgImFnZSI6NTAsInNhbHQiOjEyMzA1NDcxNTl9.KZ0334RHpdL3P00ORsbkS-LK-hNfrRCal_xGc_3nd-8")
+
+	connOpts.OnConnect = func(c MQTT.Client) {
+		if token := c.Subscribe(
+			"$share/group/chatlog/ext", byte(0),
+			func(client MQTT.Client, message MQTT.Message) {
+				process(message.Topic(), message.Payload(), redisClient)
+			}); token.Wait() && token.Error() != nil {
+			panic(token.Error())
+		}
+	}
+
+	client := MQTT.NewClient(connOpts)
+	if token := client.Connect(); token.Wait() && token.Error() != nil {
+		panic(token.Error())
+	} else {
+		fmt.Printf("Connected to %s\n", *pMqttServer)
+	}
+
+	app.Get("/system/status", func(ctx iris.Context) {
+		ctx.JSON(iris.Map{
+			"call_proc":     call_proc_count,
+			"process_count": process_count,
+			"event_send":    event_send,
+			"quene":         queue_len,
+			"step":          step,
+			"message":       "OK",
+		})
+	})
+
+	app.Get("/son", func(ctx iris.Context) {
+		isUseServer = true
+		ctx.JSON(iris.Map{
+			"server": isUseServer,
+		})
+	})
+
+	app.Get("/soff", func(ctx iris.Context) {
+		isUseServer = false
+		ctx.JSON(iris.Map{
+			"server": isUseServer,
+		})
+	})
+
+	app.Get("/logon", func(ctx iris.Context) {
+		enable_log = true
+		ctx.JSON(iris.Map{
+			"result": "OK",
+		})
+	})
+
+	app.Get("/logoff", func(ctx iris.Context) {
+		enable_log = false
+		ctx.JSON(iris.Map{
+			"result": "OK",
+		})
+	})
+
+	app.Get("/esoff", func(ctx iris.Context) {
+		enable_es = false
+		ctx.JSON(iris.Map{
+			"result": "OK",
+		})
+	})
+
+	app.Get("/eson", func(ctx iris.Context) {
+		enable_es = true
+		ctx.JSON(iris.Map{
+			"result": "OK",
+		})
+	})
+
+	app.Run(iris.Addr(*pport_listen))
+
+}

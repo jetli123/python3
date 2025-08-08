@@ -13,8 +13,8 @@ s = StringIO.StringIO()
 s.write('www.baidu.com\r\n')
 s.write('news.realsil.com.cn')
 s.seek(0)
-print '*' * 20
-print s.tell()
-print s.read()
+print('*' * 20)
+print(s.tell())
+print(s.read())
 
-print s.getvalue()
+print(s.getvalue())

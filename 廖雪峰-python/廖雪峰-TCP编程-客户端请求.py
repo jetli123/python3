@@ -47,7 +47,7 @@ s.close()
 # 接收到的数据包括 HTTP 头和网页本身，我们只需要把 HTTP 头和网页
 # 分离一下，把 HTTP 头打印出来，网页内容保存到文件：
 header, html = data.split(b'\r\n\r\n', 1)
-print header.decode('utf-8')
+print(header.decode('utf-8'))
 # 把接收的数据写入文件:
 with open('D:/Python software/python file/sina.html', 'wb') as f:
     f.write(html)
@@ -68,6 +68,6 @@ while True:
 values = b''.join(buffers)
 m.close()
 headers, htmls = values.split(b'\r\n\r\n', 1)
-print headers.decode('utf-8')
+print(headers.decode('utf-8'))
 with open('D:/Python software/python file/sax.html', 'wb') as e:
     e.write(htmls)
